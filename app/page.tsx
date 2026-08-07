@@ -6,12 +6,10 @@ import Hero from "@/components/Hero";
 import TrustedCompanies from "@/components/TrustedCompanies";
 import OdooEcosystem from "@/components/OdooEcosystem";
 import ServicesSection from "@/components/ServicesSection";
-// import IndustriesSection from "@/components/IndustriesSection";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
 import WhyReliution from "@/components/WhyReliution";
 import HireOdooDevelopers from "@/components/HireOdooDevelopers";
-import CaseStudies from "@/components/CaseStudies";
-import Testimonials from "@/components/Testimonials";
+// import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export default function ReliutionApp() {
@@ -22,12 +20,10 @@ export default function ReliutionApp() {
       <TrustedCompanies />
       <OdooEcosystem />
       <ServicesSection />
-      {/* <IndustriesSection /> */}
       <IndustriesWeServe />
       <WhyReliution />
       <HireOdooDevelopers />
-      <CaseStudies />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Footer />
     </main>
   );

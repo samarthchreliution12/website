@@ -153,7 +153,7 @@ export default function Hero() {
                 <div className="text-[11px] text-slate-400 font-medium mt-0.5">Years Experience</div>
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                <AnimatedHeroStat value={100} suffix="+" />
+                <AnimatedHeroStat value={30} suffix="+" />
                 <div className="text-[11px] text-slate-400 font-medium mt-0.5">Global Clients</div>
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
@@ -162,7 +162,7 @@ export default function Hero() {
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <AnimatedHeroStat value={30} suffix="+" />
-                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Odoo Experts</div>
+                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Qualified Employees</div>
               </div>
             </motion.div>
           </div>
