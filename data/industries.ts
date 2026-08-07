@@ -1,0 +1,68 @@
+import { IndustryCardItem } from "@/types/industry";
+
+export const INDUSTRIES_DATA: IndustryCardItem[] = [
+  {
+    id: "manufacturing",
+    title: "Manufacturing & Production",
+    category: "Industrial ERP",
+    desc: "Streamline shop floor operations, BOM management, MRP planning, and quality control with custom Odoo manufacturing solutions.",
+    iconName: "Factory",
+    tags: ["MRP", "BOM", "Work Centers", "Quality Control"],
+  },
+  {
+    id: "supply-chain",
+    title: "Supply Chain & Logistics",
+    category: "Logistics Automation",
+    desc: "Optimize warehouse inventory, automated fleet routing, multi-location logistics, and real-time shipment tracking.",
+    iconName: "Truck",
+    tags: ["Warehouse", "WMS", "3PL Sync", "Barcode Scanning"],
+  },
+  {
+    id: "healthcare",
+    title: "Healthcare & Pharmaceuticals",
+    category: "HIPAA Compliant Systems",
+    desc: "Secure patient data management, medical inventory tracking, pharmacy ERP, and automated regulatory reporting.",
+    iconName: "Activity",
+    tags: ["Pharmacy ERP", "Compliance", "Patient Portal", "Telehealth"],
+  },
+  {
+    id: "retail",
+    title: "Retail & E-Commerce",
+    category: "Omnichannel Commerce",
+    desc: "Unified Point of Sale (POS), real-time store inventory sync, e-commerce integration, and customer loyalty automation.",
+    iconName: "ShoppingBag",
+    tags: ["Omnichannel POS", "Inventory Sync", "Payment Gateway", "Loyalty"],
+  },
+  {
+    id: "finance",
+    title: "Finance & Accounting",
+    category: "Fintech & Financial Tech",
+    desc: "Automated general ledgers, multi-currency invoicing, bank reconciliation, and executive financial dashboards.",
+    iconName: "Landmark",
+    tags: ["General Ledger", "Multi-Currency", "Tax Compliance", "Invoicing"],
+  },
+  {
+    id: "telecom",
+    title: "Telecom & IT Infrastructure",
+    category: "Enterprise Cloud & DevOps",
+    desc: "Scalable cloud infrastructure, automated CI/CD deployment pipelines, network monitoring, and enterprise SaaS apps.",
+    iconName: "Cloud",
+    tags: ["DevOps", "Kubernetes", "AWS Cloud", "Microservices"],
+  },
+  {
+    id: "food-distribution",
+    title: "Food & Beverage Distribution",
+    category: "Batch & Expiry Control",
+    desc: "Traceability, lot number tracking, temperature-controlled inventory management, and automated purchase orders.",
+    iconName: "Utensils",
+    tags: ["Traceability", "Batch Control", "Cold Chain", "Supplier Portal"],
+  },
+  {
+    id: "professional-services",
+    title: "Professional Services",
+    category: "Project & Timesheet Hub",
+    desc: "Milestone management, billable timesheets, automated client invoicing, and resource utilization analytics.",
+    iconName: "Briefcase",
+    tags: ["Timesheets", "Milestones", "Client Portal", "Profitability"],
+  },
+];

@@ -1,24 +1,25 @@
 "use client";
 
 import React from "react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import TrustedCompanies from "@/components/TrustedCompanies";
-import OdooEcosystem from "@/components/OdooEcosystem";
-import BusinessConsultingSection from "@/components/BusinessConsultingSection";
-import AISolutionsSection from "@/components/AISolutionsSection";
-import WorkflowAutomationSection from "@/components/WorkflowAutomationSection";
-import AnalyticsSection from "@/components/AnalyticsSection";
-import MobileAppSection from "@/components/MobileAppSection";
-import CustomSoftwareSection from "@/components/CustomSoftwareSection";
-import DevOpsCloudSection from "@/components/DevOpsCloudSection";
-import IndustriesWeServe from "@/components/IndustriesWeServe";
-import WhyReliution from "@/components/WhyReliution";
-import HireOdooDevelopers from "@/components/HireOdooDevelopers";
-// import CaseStudies from "@/components/CaseStudies";
-import Testimonials from "@/components/Testimonials";
-import Footer from "@/components/Footer";
-import ScrollStorytellingController from "@/components/ScrollStorytellingController";
+import Navbar from "@/features/shared/Navbar/Navbar";
+import Footer from "@/features/shared/Footer/Footer";
+import ScrollStorytellingController from "@/features/shared/ScrollProgress/ScrollStorytellingController";
+
+import Hero from "@/features/home/Hero/Hero";
+import TrustedPartners from "@/features/home/TrustedPartners/TrustedPartners";
+import IndustriesWeServe from "@/features/home/Industries/IndustriesWeServe";
+import WhyReliution from "@/features/home/WhyReliution/WhyReliution";
+import HireExperts from "@/features/home/HireExperts/HireExperts";
+import Testimonials from "@/features/home/Testimonials/Testimonials";
+
+import OdooEcosystem from "@/features/services/OdooERP/OdooEcosystem";
+import BusinessConsultingSection from "@/features/services/BusinessConsulting/BusinessConsultingSection";
+import AISolutionsSection from "@/features/services/AIMachineLearning/AISolutionsSection";
+import WorkflowAutomationSection from "@/features/services/WorkflowAutomation/WorkflowAutomationSection";
+import AnalyticsSection from "@/features/services/BusinessIntelligence/AnalyticsSection";
+import MobileAppSection from "@/features/services/MobileDevelopment/MobileAppSection";
+import CustomSoftwareSection from "@/features/services/CustomSoftware/CustomSoftwareSection";
+import DevOpsCloudSection from "@/features/services/DevOpsCloud/DevOpsCloudSection";
 
 export default function ReliutionApp() {
   return (
@@ -26,7 +27,7 @@ export default function ReliutionApp() {
       <ScrollStorytellingController />
       <Navbar />
       <Hero />
-      <TrustedCompanies />
+      <TrustedPartners />
 
       {/* 8 FULL-SCREEN STORYTELLING SERVICE SECTIONS */}
       <div id="service-odoo" className="relative">
@@ -63,8 +64,7 @@ export default function ReliutionApp() {
 
       <IndustriesWeServe />
       <WhyReliution />
-      <HireOdooDevelopers />
-      {/* <CaseStudies /> */}
+      <HireExperts />
       <Testimonials />
       <Footer />
     </main>
