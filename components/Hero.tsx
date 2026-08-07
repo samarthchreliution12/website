@@ -8,11 +8,11 @@ import {
   TrendingUp,
   BarChart3,
   Layers,
-  ShoppingBag,
-  Calculator,
-  Factory,
-  ShoppingCart,
-  Users,
+  Cpu,
+  Smartphone,
+  Cloud,
+  Code2,
+  BrainCircuit,
   CheckCircle2
 } from "lucide-react";
 
@@ -33,7 +33,6 @@ function AnimatedHeroStat({ value, suffix }: { value: number; suffix: string }) 
       const timer = setInterval(() => {
         frame++;
         const progress = frame / totalFrames;
-        // Smooth ease-out exponential curve
         const currentCount = Math.round(value * (1 - Math.pow(2, -10 * progress)));
         setCount(currentCount);
 
@@ -88,7 +87,10 @@ export default function Hero() {
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
+          {/* LEFT CONTENT COLUMN */}
           <div className="lg:col-span-6 space-y-8">
+            
+            {/* TOP TRUST BADGE */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,29 +99,35 @@ export default function Hero() {
             >
               <span className="w-2 h-2 rounded-full bg-[#00E676] animate-pulse" />
               <span className="text-xs font-mono font-semibold uppercase tracking-wider text-white">
-                OFFICIAL ODOO ERP IMPLEMENTATION PARTNER
+                ODDO • AI • CLOUD • AUTOMATION
               </span>
               <Sparkles className="w-3.5 h-3.5 text-[#00F0FF]" />
             </motion.div>
+
+            {/* MAIN HEADING */}
             <motion.h1
               initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
               animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]"
             >
-              Your Trusted Odoo Partner For{" "}
+              Transforming Businesses Through Intelligent{" "}
               <span className="bg-gradient-to-r from-white via-[#38BDF8] to-[#00F0FF] bg-clip-text text-transparent">
-                Enterprise Implementation
+                Digital Solutions
               </span>
             </motion.h1>
+
+            {/* SUBTITLE */}
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="text-lg text-slate-300 max-w-xl leading-relaxed font-normal"
             >
-              Accelerate operational efficiency with tailored Odoo ERP, CRM, and DevOps solutions. Backed by 10+ years of domain mastery and 100+ successful global enterprise deployments.
+              Reliution empowers businesses with enterprise technology solutions including Odoo ERP, Business Process Consulting, AI & Machine Learning, Workflow Automation, Business Intelligence, Custom Software Development, Mobile Applications, and DevOps & Cloud Infrastructure—helping organizations innovate, automate, and scale with confidence.
             </motion.p>
+
+            {/* CTA BUTTONS */}
             <motion.div
               initial={{ opacity: 0, scale: 0.92, y: 16 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -137,11 +145,11 @@ export default function Hero() {
                 href="/odoo-implementation"
                 className="px-7 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white text-sm font-medium border border-white/15 backdrop-blur-md transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                Explore Odoo Services
+                Explore Our Services
               </a>
             </motion.div>
 
-            {/* HERO STATS BAR WITH ANIMATED COUNTER */}
+            {/* HERO STATS BAR */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -150,23 +158,24 @@ export default function Hero() {
             >
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <AnimatedHeroStat value={10} suffix="+" />
-                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Years Experience</div>
+                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Years of Experience</div>
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <AnimatedHeroStat value={30} suffix="+" />
-                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Global Clients</div>
+                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Technology Experts</div>
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <AnimatedHeroStat value={100} suffix="+" />
-                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Deployments</div>
+                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Projects Delivered</div>
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                <AnimatedHeroStat value={30} suffix="+" />
-                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Qualified Employees</div>
+                <AnimatedHeroStat value={100} suffix="+" />
+                <div className="text-[11px] text-slate-400 font-medium mt-0.5">Enterprise Clients</div>
               </div>
             </motion.div>
           </div>
 
+          {/* RIGHT FLOATING 3D ENTERPRISE DASHBOARD MOCKUP */}
           <div className="lg:col-span-6 relative perspective-1000">
             <motion.div
               style={{ rotateX, rotateY }}
@@ -181,91 +190,99 @@ export default function Hero() {
                   <div className="w-3 h-3 rounded-full bg-red-500/80" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                  <span className="text-xs font-mono text-slate-400 ml-2">reliution.odoo.enterprise/dashboard</span>
+                  <span className="text-xs font-mono text-slate-400 ml-2">reliution.enterprise/command-center</span>
                 </div>
                 <span className="text-[10px] font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded border border-[#00F0FF]/20">
-                  LIVE ODOO ENGINE
+                  LIVE ENTERPRISE ENGINE
                 </span>
               </div>
+
+              {/* SERVICE PORTFOLIO MODULE WIDGETS */}
               <motion.div
                 animate={{ y: [-4, 4, -4] }}
                 transition={{ duration: 4.2, ease: "easeInOut", repeat: Infinity }}
                 className="col-span-6 p-4 rounded-xl bg-white/5 border border-white/10"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-400">CRM Pipeline</span>
-                  <Users className="w-4 h-4 text-[#0D82F8]" />
+                  <span className="text-xs font-mono text-slate-400">Odoo ERP</span>
+                  <Layers className="w-4 h-4 text-[#0D82F8]" />
                 </div>
-                <div className="text-lg font-bold text-white mt-1">$142,500</div>
+                <div className="text-sm font-bold text-white mt-1">Unified Core ERP</div>
                 <div className="text-[10px] text-emerald-400 flex items-center gap-1 mt-1">
-                  <TrendingUp className="w-3 h-3" /> +28.4% qualified deals
+                  <TrendingUp className="w-3 h-3" /> +340% Ops Velocity
                 </div>
-                <div className="text-[9px] font-mono text-slate-500 mt-2">[ASSET: Odoo CRM Widget Placeholder]</div>
               </motion.div>
+
               <motion.div
                 animate={{ y: [4, -4, 4] }}
                 transition={{ duration: 5.0, ease: "easeInOut", repeat: Infinity }}
                 className="col-span-6 p-4 rounded-xl bg-white/5 border border-white/10"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-400">Analytics BI</span>
-                  <BarChart3 className="w-4 h-4 text-[#00F0FF]" />
+                  <span className="text-xs font-mono text-slate-400">AI & Machine Learning</span>
+                  <BrainCircuit className="w-4 h-4 text-[#00F0FF]" />
                 </div>
-                <div className="text-lg font-bold text-white mt-1">99.4% Uptime</div>
-                <div className="text-[10px] text-[#00F0FF] mt-1">+34.2% Efficiency gain</div>
-                <div className="text-[9px] font-mono text-slate-500 mt-2">[ASSET: Analytics Widget Placeholder]</div>
+                <div className="text-sm font-bold text-white mt-1">Predictive Models</div>
+                <div className="text-[10px] text-[#00F0FF] mt-1">Automated Insights</div>
               </motion.div>
-              <div className="col-span-12 p-5 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 flex items-center justify-between">
+
+              <div className="col-span-12 p-4 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="p-3 rounded-xl bg-[#0D82F8]/20 text-[#00F0FF]">
-                    <Layers className="w-6 h-6" />
+                    <Cpu className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-white">Central Odoo ERP Command Hub</div>
-                    <div className="text-xs text-slate-400">Synchronized ERP, HR, Sales & MRP Core</div>
+                    <div className="text-sm font-bold text-white">Central Digital Transformation Hub</div>
+                    <div className="text-xs text-slate-400">Synchronized ERP, AI, BI, Cloud & Software Core</div>
                   </div>
                 </div>
                 <CheckCircle2 className="w-5 h-5 text-[#00E676]" />
               </div>
+
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 4.8, ease: "easeInOut", repeat: Infinity }}
                 className="col-span-4 p-3 rounded-xl bg-white/5 border border-white/10 text-center"
               >
-                <ShoppingBag className="w-4 h-4 text-[#0D82F8] mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">Sales</span>
-                <span className="text-[9px] font-mono text-slate-400">[ASSET: Sales Placeholder]</span>
+                <Layers className="w-4 h-4 text-[#0D82F8] mx-auto mb-1" />
+                <span className="text-xs font-bold text-white block">Business Consulting</span>
               </motion.div>
+
               <motion.div
                 animate={{ y: [5, -5, 5] }}
                 transition={{ duration: 5.4, ease: "easeInOut", repeat: Infinity }}
                 className="col-span-4 p-3 rounded-xl bg-white/5 border border-white/10 text-center"
               >
-                <Calculator className="w-4 h-4 text-[#00F0FF] mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">Accounting</span>
-                <span className="text-[9px] font-mono text-slate-400">[ASSET: Accounting Placeholder]</span>
+                <BrainCircuit className="w-4 h-4 text-[#00F0FF] mx-auto mb-1" />
+                <span className="text-xs font-bold text-white block">Workflow Automation</span>
               </motion.div>
+
               <motion.div
                 animate={{ y: [-6, 6, -6] }}
                 transition={{ duration: 6.2, ease: "easeInOut", repeat: Infinity }}
                 className="col-span-4 p-3 rounded-xl bg-white/5 border border-white/10 text-center"
               >
-                <Factory className="w-4 h-4 text-[#6366F1] mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">Manufacturing</span>
-                <span className="text-[9px] font-mono text-slate-400">[ASSET: MRP Placeholder]</span>
+                <BarChart3 className="w-4 h-4 text-[#6366F1] mx-auto mb-1" />
+                <span className="text-xs font-bold text-white block">Business Intelligence</span>
               </motion.div>
-              <div className="col-span-6 p-3 rounded-xl bg-white/5 border border-white/10 text-center">
-                <ShoppingCart className="w-4 h-4 text-emerald-400 mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">Purchase Module</span>
-                <span className="text-[9px] font-mono text-slate-400">[ASSET: Purchase Widget Placeholder]</span>
+
+              <div className="col-span-4 p-3 rounded-xl bg-white/5 border border-white/10 text-center">
+                <Code2 className="w-4 h-4 text-emerald-400 mx-auto mb-1" />
+                <span className="text-xs font-bold text-white block">Custom Software</span>
               </div>
-              <div className="col-span-6 p-3 rounded-xl bg-white/5 border border-white/10 text-center">
-                <Layers className="w-4 h-4 text-amber-400 mx-auto mb-1" />
-                <span className="text-xs font-bold text-white block">Inventory Control</span>
-                <span className="text-[9px] font-mono text-slate-400">[ASSET: Inventory Widget Placeholder]</span>
+
+              <div className="col-span-4 p-3 rounded-xl bg-white/5 border border-white/10 text-center">
+                <Smartphone className="w-4 h-4 text-amber-400 mx-auto mb-1" />
+                <span className="text-xs font-bold text-white block">Mobile Apps</span>
+              </div>
+
+              <div className="col-span-4 p-3 rounded-xl bg-white/5 border border-white/10 text-center">
+                <Cloud className="w-4 h-4 text-sky-400 mx-auto mb-1" />
+                <span className="text-xs font-bold text-white block">Cloud & DevOps</span>
               </div>
             </motion.div>
           </div>
+
         </div>
       </div>
     </section>

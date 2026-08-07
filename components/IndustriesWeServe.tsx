@@ -95,9 +95,10 @@ export default function IndustriesWeServe() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mt-4 leading-tight"
           >
-            Transforming Every Industry <br />
+            Digital Solutions
+            <br />
             <span className="bg-gradient-to-r from-white via-slate-200 to-[#38BDF8] bg-clip-text text-transparent">
-              With Intelligent Odoo ERP Solutions
+              Built for Every Industry.
             </span>
           </motion.h2>
 

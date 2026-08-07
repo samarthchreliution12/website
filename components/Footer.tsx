@@ -69,7 +69,7 @@ export default function Footer() {
             </a>
 
             <p className="text-sm text-slate-400 leading-relaxed font-normal max-w-sm">
-              We are a team of passionate Odoo experts helping businesses automate operations through implementation, customization, integration, and enterprise ERP solutions.
+              We are a team of technology experts helping businesses accelerate digital transformation through Odoo ERP, Artificial Intelligence, Workflow Automation, Business Intelligence, Mobile Applications, Cloud Infrastructure, and Custom Software Development.
             </p>
 
             {/* OFFICIAL BADGES SIDE BY SIDE */}
