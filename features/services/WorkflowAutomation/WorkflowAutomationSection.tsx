@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2, Workflow, Database, MessageSquare, Mail, Zap, Check } from "lucide-react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { ArrowRight, CheckCircle2, Workflow, Database, MessageSquare, Zap, Check } from "lucide-react";
 import { SectionBadge } from "@/components/ui/Badge";
+import styles from "./WorkflowAutomationSection.module.css";
 
 const AUTOMATION_PILLS = [
   "WhatsApp API Automation",
@@ -23,7 +24,7 @@ const WORKFLOW_NODES = [
     title: "New Lead Received",
     subtitle: "HubSpot / Webform Trigger",
     status: "TRIGGERED",
-    statusColor: "text-[#00F0FF] bg-[#00F0FF]/10 border-[#00F0FF]/30",
+    statusColor: "text-[#55443A] bg-[#55443A]/10 border-[#55443A]/20",
     icon: Database,
   },
   {
@@ -32,7 +33,7 @@ const WORKFLOW_NODES = [
     title: "AI Lead Scoring & Enrichment",
     subtitle: "GPT-4o Qualification Engine",
     status: "PROCESSED",
-    statusColor: "text-purple-400 bg-purple-400/10 border-purple-400/30",
+    statusColor: "text-[#4D2308] bg-[#4D2308]/10 border-[#4D2308]/20",
     icon: Zap,
   },
   {
@@ -41,7 +42,7 @@ const WORKFLOW_NODES = [
     title: "Odoo CRM Auto-Creation",
     subtitle: "Deal Value & Rep Assigned",
     status: "SYNCED",
-    statusColor: "text-[#00E676] bg-[#00E676]/10 border-[#00E676]/30",
+    statusColor: "text-[#55443A] bg-[#55443A]/10 border-[#55443A]/20",
     icon: Check,
   },
   {
@@ -50,7 +51,7 @@ const WORKFLOW_NODES = [
     title: "WhatsApp & Slack Alert Sent",
     subtitle: "Instant Sales Rep Notification",
     status: "DELIVERED",
-    statusColor: "text-amber-400 bg-amber-400/10 border-amber-400/30",
+    statusColor: "text-[#8A9992] bg-[#8A9992]/10 border-[#8A9992]/20",
     icon: MessageSquare,
   },
 ];
@@ -84,13 +85,11 @@ export default function WorkflowAutomationSection() {
   };
 
   return (
-    <section className="relative min-h-screen py-28 lg:py-36 flex items-center bg-[#08090E] overflow-hidden border-b border-white/5 my-12 lg:my-20">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_0%,rgba(20,184,166,0.12),transparent)] pointer-events-none" />
-
-      <div className="max-w-[1560px] mx-auto px-6 sm:px-14 lg:px-24 xl:px-28 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.grid}>
           
-          <div className="lg:col-span-5 space-y-6 sm:space-y-7 max-w-[560px]">
+          <div className={styles.leftCol}>
             <SectionBadge>WORKFLOW AUTOMATION</SectionBadge>
 
             <motion.h2
@@ -98,10 +97,10 @@ export default function WorkflowAutomationSection() {
               whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]"
+              className={styles.heading}
             >
               Automate Complex <br />
-              <span className="bg-gradient-to-r from-white via-slate-200 to-[#00F0FF] bg-clip-text text-transparent">
+              <span style={{ background: "linear-gradient(to right, #1F1F1F, #4D2308, #55443A)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>
                 Cross-Platform Workflows.
               </span>
             </motion.h2>
@@ -111,7 +110,7 @@ export default function WorkflowAutomationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal"
+              className={styles.desc}
             >
               Eliminate repetitive manual tasks and human error. Reliution designs intelligent end-to-end automation pipelines linking your ERP, CRM, WhatsApp API, emails, and databases into a synchronized 24/7 automated engine.
             </motion.p>
@@ -121,12 +120,12 @@ export default function WorkflowAutomationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1"
+              className={styles.pillsGrid}
             >
               {AUTOMATION_PILLS.map((pill, idx) => (
-                <div key={idx} className="flex items-center gap-1.5 p-2 rounded-xl bg-white/[0.03] border border-white/5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#00E676] shrink-0" />
-                  <span className="text-[11px] font-medium text-slate-200 truncate">{pill}</span>
+                <div key={idx} className={styles.pillItem}>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#55443A] shrink-0" />
+                  <span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{pill}</span>
                 </div>
               ))}
             </motion.div>
@@ -136,14 +135,11 @@ export default function WorkflowAutomationSection() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: 0.45, ease: [0.34, 1.56, 0.64, 1] }}
-              className="flex flex-wrap items-center gap-4 pt-2"
+              style={{ paddingTop: "0.5rem" }}
             >
-              <a
-                href="/contactus"
-                className="group px-6 py-3 rounded-xl bg-[#0D82F8] hover:bg-[#38BDF8] text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-[#0D82F8]/25 border border-white/20 transition-all hover:scale-105 active:scale-95"
-              >
+              <a href="/contactus" className={styles.primaryBtn}>
                 <span>Automate Your Workflows</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-white" />
               </a>
             </motion.div>
           </div>
@@ -151,33 +147,31 @@ export default function WorkflowAutomationSection() {
           <div
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="lg:col-span-7 relative perspective-1000"
+            className={`${styles.rightCol} perspective-1000`}
           >
-            <div className="absolute -top-10 -right-10 w-72 h-72 bg-[#00F0FF]/20 rounded-full blur-3xl pointer-events-none" />
-
             <motion.div
               style={{ rotateX, rotateY }}
               animate={{ y: [-6, 6, -6] }}
               transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
-              className="relative w-full p-5 sm:p-6 rounded-3xl bg-[#0D0E15]/95 border border-white/15 shadow-2xl shadow-black/90 backdrop-blur-2xl space-y-4 scale-[0.88] lg:scale-[0.92] origin-center"
+              className={styles.mockupCard}
             >
-              <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-1.5 rounded-xl bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30">
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingBottom: "0.75rem", borderBottom: "1px solid #f1f5f9" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}>
+                  <div style={{ padding: "0.375rem", borderRadius: "0.75rem", backgroundColor: "rgba(85,68,58,0.1)", color: "var(--color-accent)", border: "1px solid rgba(85,68,58,0.2)" }}>
                     <Workflow className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-white tracking-tight">Live Enterprise Automation Flow</h4>
-                    <p className="text-[10px] font-mono text-slate-400">n8n & Odoo Webhook Trigger Hub</p>
+                    <h4 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--color-text-primary)", letterSpacing: "-0.01em" }}>Live Enterprise Automation Flow</h4>
+                    <p style={{ fontSize: "10px", fontFamily: "var(--font-mono)", color: "var(--color-text-secondary)" }}>n8n & Odoo Webhook Trigger Hub</p>
                   </div>
                 </div>
-                <span className="text-[9px] font-mono font-bold text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 px-2 py-0.5 rounded-full flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                <span style={{ fontSize: "9px", fontFamily: "var(--font-mono)", fontWeight: 700, color: "var(--color-accent)", backgroundColor: "rgba(85,68,58,0.1)", border: "1px solid rgba(85,68,58,0.2)", padding: "0.125rem 0.5rem", borderRadius: "9999px", display: "flex", alignItems: "center", gap: "0.25rem" }}>
+                  <span style={{ width: "0.375rem", height: "0.375rem", borderRadius: "9999px", backgroundColor: "var(--color-accent)" }} className="animate-ping" />
                   PIPELINE ACTIVE
                 </span>
               </div>
 
-              <div className="space-y-3 relative">
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", position: "relative" }}>
                 {WORKFLOW_NODES.map((node, index) => {
                   const isActive = index === activeStepIndex;
                   const NodeIcon = node.icon;
@@ -186,25 +180,41 @@ export default function WorkflowAutomationSection() {
                     <motion.div
                       key={node.id}
                       animate={{ scale: isActive ? 1.02 : 1 }}
-                      className={`p-3.5 rounded-2xl border transition-all duration-300 flex items-center justify-between ${
-                        isActive
-                          ? "bg-[#0D82F8]/20 border-[#00F0FF] shadow-lg shadow-[#00F0FF]/20"
-                          : "bg-white/[0.03] border-white/10 opacity-80"
-                      }`}
+                      style={{
+                        padding: "0.875rem",
+                        borderRadius: "1rem",
+                        border: isActive ? "1px solid #55443A" : "1px solid rgba(85,68,58,0.1)",
+                        backgroundColor: isActive ? "rgba(85,68,58,0.1)" : "rgba(207,208,205,0.2)",
+                        opacity: isActive ? 1 : 0.8,
+                        transition: "all 0.3s ease",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between"
+                      }}
                     >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 rounded-xl flex items-center justify-center font-mono text-xs font-bold ${
-                          isActive ? "bg-[#00F0FF] text-black" : "bg-white/10 text-white"
-                        }`}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                        <div style={{
+                          width: "2rem",
+                          height: "2rem",
+                          borderRadius: "0.75rem",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontFamily: "var(--font-mono)",
+                          fontSize: "0.75rem",
+                          fontWeight: 700,
+                          backgroundColor: isActive ? "#55443A" : "rgba(207,208,205,0.4)",
+                          color: isActive ? "#ffffff" : "var(--color-text-primary)"
+                        }}>
                           {node.step}
                         </div>
 
                         <div>
-                          <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                            <NodeIcon className="w-3.5 h-3.5 text-[#00F0FF]" />
+                          <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--color-text-primary)", display: "flex", alignItems: "center", gap: "0.375rem" }}>
+                            <NodeIcon className="w-3.5 h-3.5 text-[#55443A]" />
                             {node.title}
                           </div>
-                          <div className="text-[10px] font-mono text-slate-400">{node.subtitle}</div>
+                          <div style={{ fontSize: "10px", fontFamily: "var(--font-mono)", color: "var(--color-text-secondary)" }}>{node.subtitle}</div>
                         </div>
                       </div>
 

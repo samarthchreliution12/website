@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { SectionBadge } from "@/components/ui/Badge";
+import styles from "./Hero.module.css";
 import "./Hero.css";
 
 const HERO_STATS = [
@@ -41,34 +43,27 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 lg:pt-40 lg:pb-32 flex items-center bg-[#08090E] overflow-hidden border-b border-white/5">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(13,130,248,0.25),transparent)] pointer-events-none" />
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#00F0FF_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
-
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.grid}>
           
-          <div className="lg:col-span-6 space-y-7">
+          <div className={styles.leftCol}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md"
             >
-              <span className="w-2 h-2 rounded-full bg-[#00E676] animate-pulse" />
-              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#00F0FF]">
-                Enterprise Digital Transformation Partner
-              </span>
+              <SectionBadge>Enterprise Digital Transformation Partner</SectionBadge>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, filter: "blur(10px)", y: 24 }}
               animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]"
+              className={styles.heading}
             >
               Architecting <br />
-              <span className="bg-gradient-to-r from-white via-slate-100 to-[#00F0FF] bg-clip-text text-transparent">
+              <span className={styles.gradientText}>
                 Digital Evolution
               </span> <br />
               For Modern Enterprises.
@@ -78,7 +73,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-xl"
+              className={styles.desc}
             >
               Reliution designs, deploys, and optimizes mission-critical digital systems. From Odoo Enterprise ERP and AI decision engines to cloud-native platforms, we accelerate business growth with zero operational friction.
             </motion.p>
@@ -87,11 +82,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-2 gap-3 pt-2 max-w-md"
+              className={styles.pillsGrid}
             >
               {BRAND_PILLS.map((pill, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-xs font-medium text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-[#00E676] shrink-0" />
+                <div key={idx} className={styles.pillItem}>
+                  <CheckCircle2 className="w-4 h-4 text-[#55443A] shrink-0" />
                   <span>{pill}</span>
                 </div>
               ))}
@@ -101,22 +96,16 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
-              className="flex flex-wrap items-center gap-4 pt-4"
+              className={styles.btnRow}
             >
-              <a
-                href="/contactus"
-                className="group px-7 py-3.5 rounded-xl bg-[#0D82F8] hover:bg-[#38BDF8] text-white text-sm font-semibold flex items-center gap-2 shadow-xl shadow-[#0D82F8]/25 border border-white/20 transition-all hover:scale-105 active:scale-95"
-              >
+              <a href="/contactus" className={styles.primaryBtn}>
                 <span>Schedule Strategy Call</span>
-                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4" />
               </a>
 
-              <a
-                href="/odoo-implementation"
-                className="group px-6 py-3.5 text-sm font-semibold text-slate-300 hover:text-white flex items-center gap-2 transition-colors border border-white/10 hover:border-white/20 rounded-xl bg-white/5"
-              >
+              <a href="/odoo-implementation" className={styles.secondaryBtn}>
                 <span>Explore Solutions</span>
-                <ArrowRight className="w-4 h-4 text-[#00F0FF] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#55443A]" />
               </a>
             </motion.div>
 
@@ -124,12 +113,12 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.7 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/10"
+              className={styles.statsGrid}
             >
               {HERO_STATS.map((stat, index) => (
-                <div key={index} className="space-y-1">
-                  <div className="text-2xl font-bold font-mono text-white tracking-tight">{stat.value}</div>
-                  <div className="text-xs text-slate-400 font-medium">{stat.label}</div>
+                <div key={index} style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                  <div className={styles.statVal}>{stat.value}</div>
+                  <div className={styles.statLabel}>{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -138,72 +127,69 @@ export default function Hero() {
           <div
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="lg:col-span-6 relative perspective-1000"
+            className={`${styles.rightCol} perspective-1000`}
           >
-            <div className="absolute -top-10 -right-10 w-96 h-96 bg-[#00F0FF]/15 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-[#0D82F8]/20 rounded-full blur-3xl pointer-events-none" />
-
             <motion.div
               style={{ rotateX, rotateY }}
               animate={{ y: [-8, 8, -8] }}
               transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
-              className="relative w-full p-6 sm:p-8 rounded-3xl bg-[#0D0E15]/90 border border-white/15 shadow-2xl shadow-black/80 backdrop-blur-2xl space-y-6"
+              className={styles.mockupCard}
             >
-              <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
-                  <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                  <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingBottom: "1rem", borderBottom: "1px solid #f1f5f9" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                  <div style={{ width: "0.75rem", height: "0.75rem", borderRadius: "9999px", backgroundColor: "#E57373" }} />
+                  <div style={{ width: "0.75rem", height: "0.75rem", borderRadius: "9999px", backgroundColor: "#FFB74D" }} />
+                  <div style={{ width: "0.75rem", height: "0.75rem", borderRadius: "9999px", backgroundColor: "#81C784" }} />
                 </div>
-                <div className="text-xs font-mono text-slate-400 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#00E676] animate-ping" />
+                <div style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--color-text-secondary)", display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 500 }}>
+                  <span style={{ width: "0.5rem", height: "0.5rem", borderRadius: "9999px", backgroundColor: "var(--color-accent)" }} className="animate-ping" />
                   Reliution Operations Platform v4.2
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                  <div className="text-xs text-slate-400 font-mono">ERP Throughput</div>
-                  <div className="text-2xl font-bold font-mono text-white">99.98%</div>
-                  <div className="text-[10px] text-emerald-400 font-mono">Active Real-Time Sync</div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: "1rem" }}>
+                <div style={{ padding: "1rem", borderRadius: "1rem", backgroundColor: "rgba(207, 208, 205, 0.20)", border: "1px solid rgba(85, 68, 58, 0.10)" }}>
+                  <div style={{ fontSize: "0.75rem", color: "var(--color-text-secondary)", fontFamily: "var(--font-mono)" }}>ERP Throughput</div>
+                  <div style={{ fontSize: "1.5rem", fontWeight: 700, fontFamily: "var(--font-mono)", color: "var(--color-text-primary)" }}>99.98%</div>
+                  <div style={{ fontSize: "10px", color: "var(--color-accent)", fontFamily: "var(--font-mono)", fontWeight: 600 }}>Active Real-Time Sync</div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                  <div className="text-xs text-slate-400 font-mono">AI Processing</div>
-                  <div className="text-2xl font-bold font-mono text-[#00F0FF]">12ms</div>
-                  <div className="text-[10px] text-[#00F0FF] font-mono">Automated Decisioning</div>
+                <div style={{ padding: "1rem", borderRadius: "1rem", backgroundColor: "rgba(207, 208, 205, 0.20)", border: "1px solid rgba(85, 68, 58, 0.10)" }}>
+                  <div style={{ fontSize: "0.75rem", color: "var(--color-text-secondary)", fontFamily: "var(--font-mono)" }}>AI Processing</div>
+                  <div style={{ fontSize: "1.5rem", fontWeight: 700, fontFamily: "var(--font-mono)", color: "var(--color-dark-accent)" }}>12ms</div>
+                  <div style={{ fontSize: "10px", color: "var(--color-accent)", fontFamily: "var(--font-mono)", fontWeight: 600 }}>Automated Decisioning</div>
                 </div>
               </div>
 
-              <div className="p-5 rounded-2xl bg-gradient-to-r from-[#0D82F8]/20 via-white/5 to-transparent border border-white/10 space-y-3">
-                <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="text-[#00F0FF] font-semibold">ECOSYSTEM HEALTH</span>
-                  <span className="text-emerald-400">OPTIMAL</span>
+              <div style={{ padding: "1.25rem", borderRadius: "1rem", backgroundColor: "rgba(207, 208, 205, 0.30)", border: "1px solid rgba(85, 68, 58, 0.15)" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "0.75rem", fontFamily: "var(--font-mono)", marginBottom: "0.75rem" }}>
+                  <span style={{ color: "var(--color-dark-accent)", fontWeight: 700 }}>ECOSYSTEM HEALTH</span>
+                  <span style={{ color: "var(--color-accent)", fontWeight: 700 }}>OPTIMAL</span>
                 </div>
-                <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full w-4/5 bg-gradient-to-r from-[#0D82F8] to-[#00F0FF] rounded-full shadow-[0_0_12px_#00F0FF]" />
+                <div style={{ height: "0.5rem", width: "100%", backgroundColor: "#ffffff", borderRadius: "9999px", overflow: "hidden", border: "1px solid rgba(85, 68, 58, 0.10)", marginBottom: "0.75rem" }}>
+                  <div style={{ height: "100%", width: "80%", background: "linear-gradient(to right, #55443A, #8A9992)", borderRadius: "9999px" }} />
                 </div>
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+                <div style={{ display: "flex", justifyContent: "space-between", fontSize: "10px", color: "var(--color-text-secondary)", fontFamily: "var(--font-mono)", fontWeight: 500 }}>
                   <span>Inventory / Accounting / CRM</span>
                   <span>100% Synced</span>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#0D82F8]/20 text-[#00F0FF] flex items-center justify-center font-bold text-sm">
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1rem", borderRadius: "1rem", backgroundColor: "rgba(207, 208, 205, 0.20)", border: "1px solid rgba(85, 68, 58, 0.10)" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                  <div style={{ width: "2.5rem", height: "2.5rem", borderRadius: "0.75rem", backgroundColor: "rgba(85, 68, 58, 0.15)", color: "var(--color-accent)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.875rem" }}>
                     AI
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-white">Smart Automation Engine</div>
-                    <div className="text-[10px] text-slate-400 font-mono">Workflow Efficiency Boost</div>
+                    <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--color-text-primary)" }}>Smart Automation Engine</div>
+                    <div style={{ fontSize: "10px", color: "var(--color-text-secondary)", fontFamily: "var(--font-mono)" }}>Workflow Efficiency Boost</div>
                   </div>
                 </div>
-                <span className="text-xs font-bold text-emerald-400 font-mono">+42% ROI</span>
+                <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--color-dark-accent)", fontFamily: "var(--font-mono)" }}>+42% ROI</span>
               </div>
 
-              <div className="pt-2 text-center">
-                <span className="text-[11px] text-slate-400 font-mono">
+              <div style={{ paddingTop: "0.5rem", textAlign: "center" }}>
+                <span style={{ fontSize: "11px", color: "var(--color-text-secondary)", fontFamily: "var(--font-mono)", fontWeight: 500, display: "block", textAlign: "center" }}>
                   Built on Enterprise Cloud Security Architecture
                 </span>
               </div>

@@ -6,6 +6,7 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SERVICE_STORY_SECTIONS } from "@/data/services";
+import styles from "./ScrollStorytellingController.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,25 +93,25 @@ export default function ScrollStorytellingController() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.4 }}
-            className="fixed left-8 lg:left-20 bottom-16 z-50 hidden lg:flex items-center"
+            className={styles.wrapper}
           >
             <div
-              className="relative w-[2px] h-[200px] bg-white/15 rounded-full overflow-visible cursor-pointer"
+              className={styles.track}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <motion.div
-                className="w-full bg-[#00F0FF] rounded-full shadow-[0_0_12px_rgba(0,240,255,0.8)]"
+                className={styles.fill}
                 animate={{ height: `${scrollProgress}%` }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
               />
 
-              <div className="absolute inset-0 flex flex-col justify-between">
+              <div className={styles.hitAreas}>
                 {SERVICE_STORY_SECTIONS.map((sec, idx) => (
                   <div
                     key={sec.id}
                     onClick={() => scrollToSection(sec.id)}
                     onMouseEnter={() => setHoveredIndex(idx)}
-                    className="flex-1 w-6 -ml-3 cursor-pointer"
+                    className={styles.hitArea}
                   />
                 ))}
               </div>
@@ -125,10 +126,10 @@ export default function ScrollStorytellingController() {
                     style={{
                       top: `${(hoveredIndex / (SERVICE_STORY_SECTIONS.length - 1)) * 88}%`,
                     }}
-                    className="absolute left-full -translate-y-1/2 px-3 py-1.5 rounded-xl bg-[#0D0E15]/90 border border-[#00F0FF]/30 backdrop-blur-xl shadow-2xl pointer-events-none whitespace-nowrap flex items-center gap-2"
+                    className={styles.tooltip}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse" />
-                    <span className="text-xs font-mono font-bold text-[#00F0FF]">
+                    <span className={styles.tooltipDot} />
+                    <span className={styles.tooltipText}>
                       {SERVICE_STORY_SECTIONS[hoveredIndex].title}
                     </span>
                   </motion.div>

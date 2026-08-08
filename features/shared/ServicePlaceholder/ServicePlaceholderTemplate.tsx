@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "@/features/shared/Navbar/Navbar";
 import Footer from "@/features/shared/Footer/Footer";
-import { ArrowRight, ArrowLeft } from "lucide-react";
-import { SectionBadge } from "@/components/ui/Badge";
+import { ArrowRight, ArrowLeft, ChevronRight } from "lucide-react";
+import styles from "./ServicePlaceholderTemplate.module.css";
 
 interface ServicePlaceholderProps {
   title: string;
@@ -10,83 +10,50 @@ interface ServicePlaceholderProps {
   subtitle?: string;
 }
 
-const PLACEHOLDER_CARDS = [
-  { name: "Overview", desc: "Detailed breakdown of our core capability and value proposition." },
-  { name: "Features", desc: "Key functionality, modules, and enterprise capabilities." },
-  { name: "Technologies", desc: "Modern tech stack, frameworks, and architecture tools." },
-  { name: "Industries", desc: "Tailored solutions for manufacturing, retail, finance, and more." },
-  { name: "Process", desc: "Step-by-step implementation, consulting, and deployment roadmap." },
-  { name: "Case Studies", desc: "Real-world client success stories, metrics, and ROI results." },
-  { name: "FAQs", desc: "Frequently asked questions about scope, timeline, and pricing." },
-  { name: "Contact", desc: "Direct consultation scheduling with technical architects." },
-];
-
 export default function ServicePlaceholderTemplate({
   title,
-  badge = "Enterprise Digital Solutions",
-  subtitle = "We're building a comprehensive overview of our services, technologies, implementation process, case studies, and FAQs. This page will be available soon.",
+  subtitle = "We are currently building this service detail page. Full details, features, technology stack, case studies, and FAQs will be available here soon.",
 }: ServicePlaceholderProps) {
   return (
-    <main className="min-h-screen bg-[#08090E] text-white selection:bg-[#0D82F8] selection:text-white antialiased font-sans flex flex-col justify-between">
+    <main className={styles.main}>
       <Navbar />
 
-      <section className="relative py-32 lg:py-44 flex-1 flex items-center bg-[#08090E] overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_40%,rgba(13,130,248,0.12),transparent)] pointer-events-none" />
-        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#00F0FF_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
+      <section className={styles.section}>
+        <div className={styles.container}>
+          
+          {/* BREADCRUMB */}
+          <nav style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.75rem", fontFamily: "var(--font-mono)", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>
+            <a href="/" style={{ textDecoration: "none", color: "var(--color-text-secondary)" }}>Home</a>
+            <ChevronRight className="w-3.5 h-3.5 text-[#5F6468]" />
+            <a href="/#services" style={{ textDecoration: "none", color: "var(--color-text-secondary)" }}>Services</a>
+            <ChevronRight className="w-3.5 h-3.5 text-[#5F6468]" />
+            <span style={{ color: "var(--color-accent)", fontWeight: 700 }}>{title}</span>
+          </nav>
 
-        <div className="max-w-[1560px] mx-auto px-6 sm:px-14 lg:px-24 xl:px-28 relative z-10 w-full">
-          <div className="max-w-3xl mb-16 space-y-6">
-            <SectionBadge>{badge}</SectionBadge>
+          <div className={styles.headerArea}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.25rem 0.875rem", borderRadius: "9999px", backgroundColor: "rgba(85, 68, 58, 0.08)", border: "1px solid rgba(85, 68, 58, 0.20)", color: "var(--color-dark-accent)", fontSize: "11px", fontFamily: "var(--font-mono)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em" }}>
+              <span style={{ width: "0.375rem", height: "0.375rem", borderRadius: "9999px", backgroundColor: "var(--color-accent)" }} className="animate-ping" />
+              <span>Coming Soon</span>
+            </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className={styles.title}>
               {title}
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <p className={styles.subtitle}>
               {subtitle}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="/contactus"
-                className="group px-7 py-3.5 rounded-xl bg-[#0D82F8] hover:bg-[#38BDF8] text-white text-xs font-semibold flex items-center gap-2 shadow-xl shadow-[#0D82F8]/25 border border-white/20 transition-all hover:scale-105 active:scale-95"
-              >
-                <span>Contact Us</span>
-                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+            <div className={styles.btnGroup}>
+              <a href="/contactus" className={styles.primaryBtn}>
+                <span>Request Consultation</span>
+                <ArrowRight className="w-4 h-4" />
               </a>
 
-              <a
-                href="/"
-                className="group px-6 py-3.5 text-xs font-semibold text-slate-300 hover:text-white flex items-center gap-2 transition-colors border border-white/10 hover:border-white/20 rounded-xl bg-white/5"
-              >
-                <ArrowLeft className="w-4 h-4 text-[#00F0FF] group-hover:-translate-x-1 transition-transform" />
+              <a href="/" className={styles.secondaryBtn}>
+                <ArrowLeft className="w-4 h-4" />
                 <span>Back to Home</span>
               </a>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-white/10">
-            <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest mb-6">
-              PLANNED SECTION MODULES
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {PLACEHOLDER_CARDS.map((card, idx) => (
-                <div
-                  key={idx}
-                  className="p-5 rounded-2xl bg-[#0D0E15]/80 border border-white/10 backdrop-blur-xl space-y-2 opacity-75 hover:opacity-100 transition-opacity"
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-white">{card.name}</h3>
-                    <span className="text-[9px] font-mono font-bold text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded">
-                      Coming Soon
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-400 font-normal leading-relaxed">
-                    {card.desc}
-                  </p>
-                </div>
-              ))}
             </div>
           </div>
 
