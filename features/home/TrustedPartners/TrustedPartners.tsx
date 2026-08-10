@@ -27,7 +27,7 @@ export default function TrustedPartners() {
             {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logoFilename, index) => (
               <div key={index} className={styles.logoItem}>
                 <img
-                  src={`https://www.reliution.com/wp-content/uploads/2025/05/${logoFilename}`}
+                  src={`/assets/images/partners/${logoFilename}`}
                   alt={`Trusted Enterprise Partner ${index + 1}`}
                   loading="lazy"
                   className={styles.logoImg}
