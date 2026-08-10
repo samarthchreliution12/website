@@ -1,0 +1,52 @@
+.articleSection {
+  padding-top: 9rem;
+  padding-bottom: 6.5rem;
+  background-color: var(--bg-primary);
+}
+
+.containerSmall {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.metaRow {
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(85, 68, 58, 0.15);
+}
+
+.contentBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+.contentBody p {
+  margin: 0;
+}
