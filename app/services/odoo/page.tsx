@@ -1,32 +1,14 @@
-"use client";
-
 import React from "react";
-import Navbar from "@/features/shared/Navbar/Navbar";
-import Footer from "@/features/shared/Footer/Footer";
-import OdooHero from "@/components/services/odoo/OdooHero";
-import OdooServicesGrid from "@/components/services/odoo/OdooServicesGrid";
-import OdooModules from "@/components/services/odoo/OdooModules";
-import OdooProcessTimeline from "@/components/services/odoo/OdooProcessTimeline";
-import OdooWhyChoose from "@/components/services/odoo/OdooWhyChoose";
-import OdooIndustries from "@/components/services/odoo/OdooIndustries";
-import OdooTechnologies from "@/components/services/odoo/OdooTechnologies";
-import OdooFAQ from "@/components/services/odoo/OdooFAQ";
-import OdooCTA from "@/components/services/odoo/OdooCTA";
+import { Metadata } from "next";
+import EnterpriseServiceTemplate from "@/components/services/EnterpriseServiceTemplate";
+import { SERVICE_PAGES_DATA } from "@/data/servicePagesData";
 
-export default function OdooServicePage() {
-  return (
-    <main className="min-h-screen bg-[#CFD0CD] text-[#1F1F1F] selection:bg-[#55443A] selection:text-white antialiased font-sans">
-      <Navbar />
-      <OdooHero />
-      <OdooServicesGrid />
-      <OdooModules />
-      <OdooProcessTimeline />
-      <OdooWhyChoose />
-      <OdooIndustries />
-      <OdooTechnologies />
-      <OdooFAQ />
-      <OdooCTA />
-      <Footer />
-    </main>
-  );
+export const metadata: Metadata = {
+  title: "Odoo ERP Solutions & Consulting | Reliution Enterprise ERP",
+  description: "Enterprise Odoo ERP implementation, custom module development, migration, and 24/7 technical support by Reliution.",
+};
+
+export default function OdooPage() {
+  const data = SERVICE_PAGES_DATA["odoo-erp-solutions"];
+  return <EnterpriseServiceTemplate data={data} />;
 }

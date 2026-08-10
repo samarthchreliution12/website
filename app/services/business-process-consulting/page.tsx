@@ -1,20 +1,14 @@
+import React from "react";
 import { Metadata } from "next";
-import ServicePlaceholderTemplate from "@/features/shared/ServicePlaceholder/ServicePlaceholderTemplate";
+import EnterpriseServiceTemplate from "@/components/services/EnterpriseServiceTemplate";
+import { SERVICE_PAGES_DATA } from "@/data/servicePagesData";
 
 export const metadata: Metadata = {
   title: "Business Process Consulting | Reliution Digital Transformation",
-  description: "Enterprise management consulting, workflow optimization, digital transformation roadmap, and ERP readiness assessment by Reliution.",
-  openGraph: {
-    title: "Business Process Consulting | Reliution Digital Transformation",
-    description: "Enterprise management consulting, workflow optimization, digital transformation roadmap, and ERP readiness assessment by Reliution.",
-  },
+  description: "Enterprise process audits, workflow optimization, digital transformation roadmaps, and ERP readiness assessment by Reliution.",
 };
 
 export default function BusinessProcessConsultingPage() {
-  return (
-    <ServicePlaceholderTemplate
-      title="Business Process Consulting"
-      badge="MANAGEMENT & PROCESS CONSULTING"
-    />
-  );
+  const data = SERVICE_PAGES_DATA["business-process-consulting"];
+  return <EnterpriseServiceTemplate data={data} />;
 }

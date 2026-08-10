@@ -1,20 +1,14 @@
+import React from "react";
 import { Metadata } from "next";
-import ServicePlaceholderTemplate from "@/features/shared/ServicePlaceholder/ServicePlaceholderTemplate";
+import EnterpriseServiceTemplate from "@/components/services/EnterpriseServiceTemplate";
+import { SERVICE_PAGES_DATA } from "@/data/servicePagesData";
 
 export const metadata: Metadata = {
-  title: "Workflow Automation | Reliution Intelligent Automation",
-  description: "Intelligent workflow automation across CRM, ERP, WhatsApp API, email automation, approval workflows, and n8n integrations by Reliution.",
-  openGraph: {
-    title: "Workflow Automation | Reliution Intelligent Automation",
-    description: "Intelligent workflow automation across CRM, ERP, WhatsApp API, email automation, approval workflows, and n8n integrations by Reliution.",
-  },
+  title: "Workflow Automation | Reliution System Integration",
+  description: "Enterprise workflow automation pipelines, n8n integrations, WhatsApp API, and cross-system API synchronization by Reliution.",
 };
 
 export default function WorkflowAutomationPage() {
-  return (
-    <ServicePlaceholderTemplate
-      title="Workflow Automation"
-      badge="INTELLIGENT WORKFLOW AUTOMATION"
-    />
-  );
+  const data = SERVICE_PAGES_DATA["workflow-automation"];
+  return <EnterpriseServiceTemplate data={data} />;
 }

@@ -1,20 +1,14 @@
+import React from "react";
 import { Metadata } from "next";
-import ServicePlaceholderTemplate from "@/features/shared/ServicePlaceholder/ServicePlaceholderTemplate";
+import EnterpriseServiceTemplate from "@/components/services/EnterpriseServiceTemplate";
+import { SERVICE_PAGES_DATA } from "@/data/servicePagesData";
 
 export const metadata: Metadata = {
-  title: "Business Intelligence & Analytics | Reliution BI & Dashboards",
-  description: "Executive dashboards, KPI monitoring, Power BI & Tableau integrations, data warehousing, and predictive analytics by Reliution.",
-  openGraph: {
-    title: "Business Intelligence & Analytics | Reliution BI & Dashboards",
-    description: "Executive dashboards, KPI monitoring, Power BI & Tableau integrations, data warehousing, and predictive analytics by Reliution.",
-  },
+  title: "Business Intelligence & Analytics | Reliution Data Warehousing",
+  description: "Enterprise Power BI & Tableau dashboards, cloud data warehousing, ETL pipelines, and executive analytics by Reliution.",
 };
 
 export default function BusinessIntelligenceAnalyticsPage() {
-  return (
-    <ServicePlaceholderTemplate
-      title="Business Intelligence & Analytics"
-      badge="BUSINESS INTELLIGENCE & ANALYTICS"
-    />
-  );
+  const data = SERVICE_PAGES_DATA["business-intelligence-analytics"];
+  return <EnterpriseServiceTemplate data={data} />;
 }

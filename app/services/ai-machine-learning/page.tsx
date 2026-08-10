@@ -1,20 +1,14 @@
+import React from "react";
 import { Metadata } from "next";
-import ServicePlaceholderTemplate from "@/features/shared/ServicePlaceholder/ServicePlaceholderTemplate";
+import EnterpriseServiceTemplate from "@/components/services/EnterpriseServiceTemplate";
+import { SERVICE_PAGES_DATA } from "@/data/servicePagesData";
 
 export const metadata: Metadata = {
-  title: "AI & Machine Learning | Reliution Enterprise AI",
-  description: "Custom AI chatbots, computer vision, predictive analytics, natural language processing, and enterprise machine learning models by Reliution.",
-  openGraph: {
-    title: "AI & Machine Learning | Reliution Enterprise AI",
-    description: "Custom AI chatbots, computer vision, predictive analytics, natural language processing, and enterprise machine learning models by Reliution.",
-  },
+  title: "AI & Machine Learning | Reliution Predictive Intelligence",
+  description: "Enterprise AI engineering, custom LLM fine-tuning, automated document processing, and predictive decisioning engines by Reliution.",
 };
 
-export default function AiMachineLearningPage() {
-  return (
-    <ServicePlaceholderTemplate
-      title="AI & Machine Learning"
-      badge="ENTERPRISE AI SOLUTIONS"
-    />
-  );
+export default function AIMachineLearningPage() {
+  const data = SERVICE_PAGES_DATA["ai-machine-learning"];
+  return <EnterpriseServiceTemplate data={data} />;
 }

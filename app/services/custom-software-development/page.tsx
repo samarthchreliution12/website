@@ -1,20 +1,14 @@
+import React from "react";
 import { Metadata } from "next";
-import ServicePlaceholderTemplate from "@/features/shared/ServicePlaceholder/ServicePlaceholderTemplate";
+import EnterpriseServiceTemplate from "@/components/services/EnterpriseServiceTemplate";
+import { SERVICE_PAGES_DATA } from "@/data/servicePagesData";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development | Reliution SaaS & Web Apps",
-  description: "Enterprise web application development, SaaS products, custom customer portals, microservices architecture, and API integrations by Reliution.",
-  openGraph: {
-    title: "Custom Software Development | Reliution SaaS & Web Apps",
-    description: "Enterprise web application development, SaaS products, custom customer portals, microservices architecture, and API integrations by Reliution.",
-  },
+  title: "Custom Software Development | Reliution Enterprise Software",
+  description: "Enterprise SaaS platform development, custom B2B portals, cloud microservices, and software modernization by Reliution.",
 };
 
 export default function CustomSoftwareDevelopmentPage() {
-  return (
-    <ServicePlaceholderTemplate
-      title="Custom Software Development"
-      badge="CUSTOM SOFTWARE SOLUTIONS"
-    />
-  );
+  const data = SERVICE_PAGES_DATA["custom-software-development"];
+  return <EnterpriseServiceTemplate data={data} />;
 }
