@@ -463,7 +463,7 @@ export default function EnterpriseServiceTemplate({ data }: Props) {
       {/* ==========================================
          6. BUSINESS BENEFITS
          ========================================== */}
-      <section className={styles.section}>
+      {/* <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.sectionHeader}>
             <SectionBadge>BUSINESS VALUE</SectionBadge>
@@ -499,7 +499,7 @@ export default function EnterpriseServiceTemplate({ data }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ==========================================
          7. FREQUENTLY ASKED QUESTIONS

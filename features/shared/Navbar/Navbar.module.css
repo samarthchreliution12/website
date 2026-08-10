@@ -84,6 +84,7 @@
 .navLink {
   transition: color 0.2s ease;
   white-space: nowrap;
+  font-size: 0.89rem;
 }
 
 .navLink:hover {

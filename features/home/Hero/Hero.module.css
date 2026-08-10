@@ -60,9 +60,10 @@
 .leftCol {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
   width: 90%;
   min-width: 0;
+  margin-left: auto;
 }
 
 @media (min-width: 1024px) {
