@@ -5,6 +5,7 @@ import Link from "next/link";
 import { BlogPost } from "@/data/blogs/blogs";
 import styles from "./BlogCard.module.css";
 
+// takes all bolgs json data from blogs.ts and maps them to the blogcard component to display them in a grid layout.
 interface Props {
   post: BlogPost;
 }

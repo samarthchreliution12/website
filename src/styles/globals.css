@@ -2,11 +2,11 @@
 
 :root {
   /* Enterprise Light Color Palette */
-  --bg-primary: #CFD0CD;
+  --bg-primary: #ffffff;
   --bg-secondary: #FFFFFF;
-  --color-accent: #55443A;
-  --color-dark-accent: #4D2308;
-  --color-soft-accent: #8A9992;
+  --color-accent: #4381d2;
+  --color-dark-accent: #2a6c98;
+  --color-soft-accent: #ffffff;
   --color-text-primary: #1F1F1F;
   --color-text-secondary: #050505;
   /* --color-text-secondary: #5F6468; */
