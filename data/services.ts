@@ -85,3 +85,4 @@ export const ODOO_MODULES: ServiceModule[] = [
     angle: 320
   },
 ];
+

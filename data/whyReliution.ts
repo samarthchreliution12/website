@@ -1,9 +1,9 @@
-export const WHY_RELIUTION_STATS = [
-  { value: "10+", label: "Years Experience" },
-  { value: "100+", label: "Projects Delivered" },
-  { value: "8", label: "Technology Domains" },
-  { value: "24×7", label: "Dedicated Support" },
-];
+// export const WHY_RELIUTION_STATS = [
+//   { value: "10+", label: "Years Experience" },
+//   { value: "100+", label: "Projects Delivered" },
+//   { value: "8", label: "Technology Domains" },
+//   { value: "24×7", label: "Dedicated Support" },
+// ];
 
 export const WHY_RELIUTION_CAPABILITIES = [
   {

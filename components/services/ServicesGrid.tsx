@@ -10,7 +10,8 @@ import {
   BarChart3,
   Smartphone,
   Code2,
-  Cloud
+  Cloud,
+  GlobeLock,
 } from "lucide-react";
 import { SectionBadge } from "@/components/ui/Badge";
 import ServiceCard, { ServiceCardData } from "./ServiceCard";

@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring, useTransform, useInView, animate } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { SectionBadge } from "@/components/ui/Badge";
 import styles from "./Hero.module.css";
@@ -10,7 +10,7 @@ import "./Hero.css";
 const HERO_STATS = [
   { value: "100+", label: "Projects Delivered" },
   { value: "10+", label: "Years Experience" },
-  { value: "99.8%", label: "Client Retention Rate" },
+  { value: "30+", label: "Global Reach" },
   { value: "24/7", label: "Enterprise Support" },
 ];
 
@@ -20,6 +20,58 @@ const BRAND_PILLS = [
   "Cloud Infrastructure",
   "Custom Software",
 ];
+
+function CountUpStat({ value }: { value: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-20px" });
+  const [displayText, setDisplayText] = useState("0");
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    if (value === "100+") {
+      const controls = animate(0, 100, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate(latest) {
+          setDisplayText(Math.floor(latest) + "+");
+        },
+      });
+      return () => controls.stop();
+    } else if (value === "10+") {
+      const controls = animate(0, 10, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate(latest) {
+          setDisplayText(Math.floor(latest) + "+");
+        },
+      });
+      return () => controls.stop();
+    } else if (value === "99.8%") {
+      const controls = animate(0, 99.8, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate(latest) {
+          setDisplayText(latest.toFixed(1) + "%");
+        },
+      });
+      return () => controls.stop();
+    } else if (value === "24/7") {
+      const controls = animate(0, 24, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate(latest) {
+          setDisplayText(Math.floor(latest) + "/7");
+        },
+      });
+      return () => controls.stop();
+    } else {
+      setDisplayText(value);
+    }
+  }, [isInView, value]);
+
+  return <span ref={ref}>{displayText}</span>;
+}
 
 export default function Hero() {
   const mouseX = useMotionValue(0);
@@ -103,24 +155,10 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              <a href="/odoo-implementation" className={styles.secondaryBtn}>
+              <a href="/services/odoo" className={styles.secondaryBtn}>
                 <span>Explore Solutions</span>
                 <ArrowRight className="w-4 h-4 text-[#55443A]" />
               </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.7 }}
-              className={styles.statsGrid}
-            >
-              {HERO_STATS.map((stat, index) => (
-                <div key={index} style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-                  <div className={styles.statVal}>{stat.value}</div>
-                  <div className={styles.statLabel}>{stat.label}</div>
-                </div>
-              ))}
             </motion.div>
           </div>
 
@@ -197,6 +235,29 @@ export default function Hero() {
           </div>
 
         </div>
+
+        {/* FULL-WIDTH HERO STATISTICS SECTION */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className={styles.statsContainer}
+        >
+          <div className={styles.statsGrid}>
+            {HERO_STATS.map((stat, index) => (
+              <React.Fragment key={index}>
+                <div className={styles.statItem}>
+                  <div className={styles.statVal}>
+                    <CountUpStat value={stat.value} />
+                  </div>
+                  <div className={styles.statLabel}>{stat.label}</div>
+                </div>
+                {index < HERO_STATS.length - 1 && <div className={styles.divider} />}
+              </React.Fragment>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

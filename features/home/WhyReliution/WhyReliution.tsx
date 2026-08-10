@@ -11,7 +11,7 @@ import {
   CheckCircle2
 } from "lucide-react";
 import {
-  WHY_RELIUTION_STATS,
+  // WHY_RELIUTION_STATS,
   WHY_RELIUTION_CAPABILITIES,
   TECH_STACK_CHIPS
 } from "@/data/whyReliution";
@@ -54,7 +54,7 @@ export default function WhyReliution() {
           </motion.p>
         </div>
 
-        <div className={styles.statsRow}>
+        {/* <div className={styles.statsRow}>
           {WHY_RELIUTION_STATS.map((stat, idx) => (
             <motion.div
               key={idx}
@@ -70,7 +70,7 @@ export default function WhyReliution() {
               <div className={styles.statLabel}>{stat.label}</div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         <div className={styles.cardsGrid}>
           {WHY_RELIUTION_CAPABILITIES.map((card, index) => {

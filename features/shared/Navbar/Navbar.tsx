@@ -14,7 +14,7 @@ import {
   Cloud,
   Workflow,
   Compass,
-  Boxes
+  Boxes,
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import styles from "./Navbar.module.css";

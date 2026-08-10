@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowRight, CheckCircle2, ShieldCheck, Database, Layers } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Layers } from "lucide-react";
 import { SectionBadge } from "@/components/ui/Badge";
 import styles from "./OdooHero.module.css";
 

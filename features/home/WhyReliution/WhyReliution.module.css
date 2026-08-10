@@ -336,6 +336,7 @@
   font-weight: 700;
   box-shadow: var(--shadow-lg);
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
 .ctaBtn:hover {

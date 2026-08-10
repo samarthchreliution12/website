@@ -80,5 +80,5 @@ export const TRUST_METRICS = [
   { value: "100+", label: "Projects Delivered" },
   { value: "20+", label: "Technology Experts" },
   { value: "8", label: "Core Service Domains" },
-  { value: "24×7", label: "Global Support" },
+  { value: "30+", label: "Qualified Employees" },
 ];

@@ -72,7 +72,7 @@
   font-size: 1rem;
   color: var(--color-text-secondary);
   line-height: 1.65;
-  font-weight: 400;
+  font-weight: 600;
   max-width: 44rem;
 }
 
@@ -82,6 +82,7 @@
   }
 }
 
+/* RESPONSIVE GRID LAYOUT: 3 CARDS PER ROW DESKTOP/LAPTOP */
 .grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -89,14 +90,29 @@
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 992px) {
   .grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.25rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid {
+    gap: 2.5rem;
   }
 }

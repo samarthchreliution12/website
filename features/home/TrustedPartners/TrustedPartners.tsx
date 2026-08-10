@@ -10,7 +10,7 @@ export default function TrustedPartners() {
     <section className={styles.section}>
       <div className={styles.container}>
         
-        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+        <div className={styles.headingWrapper}>
           <motion.h3
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,26 +23,18 @@ export default function TrustedPartners() {
         </div>
 
         <div className={styles.marqueeTrack}>
-          <motion.div
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              duration: 25,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-            className={styles.marqueeList}
-          >
+          <div className={styles.marqueeList}>
             {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logoFilename, index) => (
               <div key={index} className={styles.logoItem}>
                 <img
                   src={`https://www.reliution.com/wp-content/uploads/2025/05/${logoFilename}`}
-                  alt={`Trusted Client Brand ${index + 1}`}
+                  alt={`Trusted Enterprise Partner ${index + 1}`}
                   loading="lazy"
                   className={styles.logoImg}
                 />
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
       </div>
