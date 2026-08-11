@@ -70,9 +70,9 @@ const ICON_MAP: Record<string, LucideIcon> = {
   ArrowUpCircle,
 };
 
-function renderIcon(iconName: string, className = "w-5 h-5 text-[#55443A]") {
+function renderIcon(iconName: string, className = "", style?: React.CSSProperties) {
   const IconComp = ICON_MAP[iconName] || CheckCircle2;
-  return <IconComp className={className} />;
+  return <IconComp className={className} style={{ width: "1.25rem", height: "1.25rem", color: "var(--color-accent)", ...style }} />;
 }
 
 interface Props {
@@ -268,7 +268,7 @@ export default function EnterpriseServiceTemplate({ data }: Props) {
                     {/* RIGHT COLUMN: PROMINENT GRAPHIC / ICON BOX */}
                     <div className={styles.stackRightCol}>
                       <div className={styles.graphicBox}>
-                        {renderIcon(service.iconName, "w-20 h-20 text-[#55443A]")}
+                        {renderIcon(service.iconName, "", { width: "4.5rem", height: "4.5rem", color: "var(--color-accent)" })}
                         <span className={styles.graphicLabel}>
                           RELIUTION ENTERPRISE
                         </span>
