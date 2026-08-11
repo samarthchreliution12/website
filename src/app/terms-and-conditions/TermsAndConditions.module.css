@@ -1,0 +1,151 @@
+.page {
+  min-height: 100vh;
+  background: white;
+  color: #292522;
+}
+
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Hero */
+
+.hero {
+  padding: 150px 0 80px;
+  border-bottom: 1px solid rgba(1, 0, 0, 0.248);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #080807;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 30px 0 0;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #000000;
+}
+
+.hero .website {
+  margin-top: 14px;
+  font-size: 15px;
+  color: #141313;
+  /* text-decoration: underline; */
+}
+
+/* Content */
+
+.content {
+  padding: 80px 0 120px;
+}
+
+.content section {
+  max-width: 900px;
+  padding: 0 0 56px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid rgba(41, 37, 34, 0.1);
+}
+
+.content section:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.content h2 {
+  margin: 0 0 22px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.content h3 {
+  margin: 28px 0 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.content p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.85;
+  color: #000000;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+.content ul {
+  margin: 20px 0;
+  padding-left: 22px;
+}
+
+.content li {
+  margin-bottom: 12px;
+  padding-left: 6px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #000000;
+}
+
+.content li::marker {
+  color: #080807;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .hero {
+    padding: 120px 0 60px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 13vw, 64px);
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .content {
+    padding: 56px 0 80px;
+  }
+
+  .content section {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+
+  .content h2 {
+    font-size: 25px;
+  }
+
+  .content p,
+  .content li {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+}

@@ -3,9 +3,9 @@ export const SITE_CONFIG = {
   legalName: "Reliution Enterprise Technologies",
   description: "Enterprise Digital Transformation Partner & ERP Consulting Firm",
   url: "https://www.reliution.com",
-  logo: "https://www.reliution.com/wp-content/uploads/2025/05/Reliution-2.png",
+  logo: "/images/logo/logo.png",
   partnerBadges: [
-    "https://www.reliution.com/wp-content/uploads/2025/05/Frame-328.png",
-    "https://www.reliution.com/wp-content/uploads/2025/05/Frame-336.png",
+    "/images/footer/partner-badge-1.png",
+    "/images/footer/partner-badge-2.png",
   ],
 };

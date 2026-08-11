@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: 'Reliution — Enterprise Digital Transformation Partner & ERP Consulting',
   description: 'Enterprise Odoo Development, ERP, AI Solutions, Cloud Infrastructure, and Custom Software Services.',
   icons: {
-    icon: 'https://www.reliution.com/wp-content/uploads/2025/05/cropped-Reliution-2-1-e1748350560620-192x192.png',
-    apple: 'https://www.reliution.com/wp-content/uploads/2025/05/cropped-Reliution-2-1-e1748350560620-180x180.png',
+    icon: '/images/logo/favicon.png',
+    apple: '/images/logo/favicon.png',
   },
 };
 

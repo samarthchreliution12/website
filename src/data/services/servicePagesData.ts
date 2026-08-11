@@ -152,6 +152,7 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
     ctaHeading: "Let's Discuss Your ERP Requirements"
   },
 
+  
   // 2. BUSINESS PROCESS CONSULTING
   "business-process-consulting": {
     slug: "business-process-consulting",
@@ -232,6 +233,7 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
     ctaHeading: "Let's Discuss Your Business Consulting Requirements"
   },
 
+  
   // 3. AI & MACHINE LEARNING
   "ai-machine-learning": {
     slug: "ai-machine-learning",
@@ -312,6 +314,7 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
     ctaHeading: "Let's Discuss Your Enterprise AI Strategy"
   },
 
+  
   // 4. WORKFLOW AUTOMATION
   "workflow-automation": {
     slug: "workflow-automation",
@@ -392,6 +395,7 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
     ctaHeading: "Let's Discuss Your Workflow Automation Needs"
   },
 
+  
   // 5. BUSINESS INTELLIGENCE & ANALYTICS
   "business-intelligence-analytics": {
     slug: "business-intelligence-analytics",
@@ -471,6 +475,8 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
 
     ctaHeading: "Let's Discuss Your Business Intelligence Requirements"
   },
+
+
 
   // 6. MOBILE APP DEVELOPMENT
   "mobile-app-development": {
@@ -626,6 +632,8 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
     ctaHeading: "Let's Discuss Your Mobile Application Project"
   },
 
+
+
   // 7. CUSTOM SOFTWARE DEVELOPMENT
   "custom-software-development": {
     slug: "custom-software-development",
@@ -706,6 +714,8 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
     ctaHeading: "Let's Discuss Your Custom Software Project"
   },
 
+
+  
   // 8. DEVOPS & CLOUD INFRASTRUCTURE
   "devops-cloud-infrastructure": {
     slug: "devops-cloud-infrastructure",

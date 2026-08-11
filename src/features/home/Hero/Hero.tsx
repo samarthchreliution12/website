@@ -156,7 +156,7 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              <a href="/services/odoo" className={styles.secondaryBtn}>
+              <a href="/services/odoo-erp-solutions" className={styles.secondaryBtn}>
                 <span>Explore Solutions</span>
                 <ArrowRight className="w-4 h-4 text-[#55443A]" />
               </a>
