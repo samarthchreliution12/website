@@ -5,4 +5,5 @@ export interface IndustryCardItem {
   desc: string;
   iconName: string;
   tags: string[];
+  link?: string;
 }

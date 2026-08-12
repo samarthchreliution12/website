@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -324,24 +325,35 @@ export default function EnterpriseServiceTemplate({ data }: Props) {
               </div>
 
               <div className={styles.odooModulesGrid}>
-                {data.odooModules.map((mod, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35, delay: idx * 0.03 }}
-                    className={styles.odooModuleCard}
-                  >
-                    <div className={styles.moduleHeader}>
-                      <div className={styles.iconBoxSmall}>
-                        {renderIcon(mod.iconName, "w-4 h-4 text-[#55443A]")}
+                {data.odooModules.map((mod, idx) => {
+                  const CardContent = (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35, delay: idx * 0.03 }}
+                      className={styles.odooModuleCard}
+                      style={mod.link ? { cursor: "pointer" } : undefined}
+                    >
+                      <div className={styles.moduleHeader}>
+                        <div className={styles.iconBoxSmall}>
+                          {renderIcon(mod.iconName, "w-4 h-4 text-[#55443A]")}
+                        </div>
+                        <h4 className={styles.moduleName}>{mod.name}</h4>
                       </div>
-                      <h4 className={styles.moduleName}>{mod.name}</h4>
-                    </div>
-                    <p className={styles.moduleDesc}>{mod.desc}</p>
-                  </motion.div>
-                ))}
+                      <p className={styles.moduleDesc}>{mod.desc}</p>
+                    </motion.div>
+                  );
+
+                  return mod.link ? (
+                    <Link key={idx} href={mod.link} style={{ textDecoration: "none", color: "inherit" }}>
+                      {CardContent}
+                    </Link>
+                  ) : (
+                    CardContent
+                  );
+                })}
               </div>
             </div>
           ) : (

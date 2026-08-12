@@ -18,6 +18,7 @@ export interface OdooModuleItem {
   name: string;
   desc: string;
   iconName: string;
+  link?: string;
 }
 
 export interface FAQItem {
@@ -107,7 +108,6 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
       { name: "Sales", desc: "Instant quotation generation, digital signatures & price list rules.", iconName: "TrendingUp" },
       { name: "Purchase", desc: "Automated vendor RFQs, purchase orders & landed cost tracking.", iconName: "ShoppingBag" },
       { name: "Inventory", desc: "Multi-warehouse management, double-entry stock & barcode scanning.", iconName: "Boxes" },
-      { name: "Manufacturing", desc: "Multi-level BoMs, work center routing & MRP automated procurement.", iconName: "Factory" },
       { name: "Accounting", desc: "Automated bank reconciliation, multi-currency ledger & tax audit reports.", iconName: "Landmark" },
       { name: "HR", desc: "Employee master records, recruitment pipelines & appraisal management.", iconName: "Layers" },
       { name: "Payroll", desc: "Salary rule configuration, payslip generation & tax deductions.", iconName: "ShieldCheck" },

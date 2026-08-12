@@ -8,6 +8,7 @@ export const INDUSTRIES_DATA: IndustryCardItem[] = [
     desc: "Streamline shop floor operations, BOM management, MRP planning, and quality control with custom Odoo manufacturing solutions.",
     iconName: "Factory",
     tags: ["MRP", "BOM", "Work Centers", "Quality Control"],
+    link: "/industries/manufacturing",
   },
   {
     id: "supply-chain",

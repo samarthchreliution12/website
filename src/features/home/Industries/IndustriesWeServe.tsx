@@ -121,7 +121,7 @@ export default function IndustriesWeServe() {
                     ))}
                   </div>
 
-                  <a href="/contactus" className={styles.cardLink}>
+                  <a href={ind.link || "/contactus"} className={styles.cardLink}>
                     <span>Explore Industry</span>
                     <ArrowRight className={styles.arrowIcon} />
                   </a>
@@ -156,7 +156,11 @@ export default function IndustriesWeServe() {
 
               <div className={styles.pillGrid}>
                 {EXTRA_INDUSTRY_PILLS.map((pill, pIdx) => (
-                  <a key={pIdx} href="/contactus" className={styles.widePill}>
+                  <a
+                    key={pIdx}
+                    href={pill === "Manufacturing" ? "/industries/manufacturing" : "/contactus"}
+                    className={styles.widePill}
+                  >
                     <span>{pill}</span>
                     <ChevronRight className={styles.pillArrow} />
                   </a>
