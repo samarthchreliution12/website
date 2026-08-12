@@ -75,13 +75,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  height: 100px;
   width: 160px;
   filter: grayscale(100%);
   opacity: 0.6;
   transition: filter 300ms ease, opacity 300ms ease, transform 300ms ease;
   cursor: pointer;
   flex-shrink: 0;
+  
 }
 
 .logoItem:hover {
@@ -91,7 +92,7 @@
 }
 
 .logoImg {
-  max-height: 80px;
+  max-height: 100px;
   max-width: 160px;
   width: auto;
   height: auto;

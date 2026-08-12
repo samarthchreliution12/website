@@ -64,7 +64,7 @@ export default function Footer() {
               <li className={styles.linkItem}><a href="/contactus">Contact Us</a></li>
               <li className={styles.linkItem}><a href="/blogs">Blogs</a></li>
               <li className={styles.linkItem}><a href="/aboutus">About Us</a></li>
-              <li className={styles.linkItem}><a href="/privacypolicy">Privacy Policy</a></li>
+              <li className={styles.linkItem}><a href="/privacy-policy">Privacy Policy</a></li>
               <li className={styles.linkItem}><a href="/terms-and-conditions/">Terms and Conditions</a></li>
             </ul>
           </div>
@@ -94,11 +94,11 @@ export default function Footer() {
         {/* BOTTOM COPYRIGHT BAR */}
         <div className={styles.bottomBar}>
           <p>© {new Date().getFullYear()} Reliution Enterprise Technologies. All rights reserved.</p>
-          {/* <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", fontFamily: "var(--font-mono)", fontSize: "11px" }}>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Security</a>
-          </div> */}
+          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", fontFamily: "var(--font-mono)", fontSize: "11px" }}>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-and-conditions">Terms & Conditions</a>
+            <a href="/contactus">Security</a>
+          </div>
         </div>
       </div>
     </footer>
