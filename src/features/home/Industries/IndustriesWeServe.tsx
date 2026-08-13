@@ -44,6 +44,19 @@ const EXTRA_INDUSTRY_PILLS = [
   "Cloud",
 ];
 
+const PILL_LINK_MAP: Record<string, string> = {
+  Manufacturing: "/industries/manufacturing",
+  Healthcare: "/industries/healthcare",
+  Retail: "/industries/retail-ecommerce",
+  Finance: "/industries/finance-accounting",
+  Telecom: "/industries/telecom",
+  Logistics: "/industries/supply-chain",
+  Ecommerce: "/industries/retail-ecommerce",
+  ERP: "/services/odoo-erp-solutions",
+  Cloud: "/services/devops-cloud-infrastructure",
+  "AI & ML": "/services/ai-machine-learning",
+};
+
 export default function IndustriesWeServe() {
   // Filter out "professional-services" card to change custom card to wide card
   const filteredIndustries = INDUSTRIES_DATA.filter((ind) => ind.id !== "professional-services");
@@ -158,7 +171,7 @@ export default function IndustriesWeServe() {
                 {EXTRA_INDUSTRY_PILLS.map((pill, pIdx) => (
                   <a
                     key={pIdx}
-                    href={pill === "Manufacturing" ? "/industries/manufacturing" : "/contactus"}
+                    href={PILL_LINK_MAP[pill] || "/industries"}
                     className={styles.widePill}
                   >
                     <span>{pill}</span>
@@ -169,7 +182,7 @@ export default function IndustriesWeServe() {
             </div>
 
             <div className={styles.wideFooter}>
-              <a href="/contactus" className={styles.wideCtaLink}>
+              <a href="/industries" className={styles.wideCtaLink}>
                 <span>Explore All Industries</span>
                 <ArrowRight className={styles.arrowIcon} />
               </a>

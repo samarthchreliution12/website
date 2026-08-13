@@ -26,6 +26,7 @@ export const INDUSTRIES_DATA: IndustryCardItem[] = [
     desc: "Secure patient data management, medical inventory tracking, pharmacy ERP, and automated regulatory reporting.",
     iconName: "Activity",
     tags: ["Pharmacy ERP", "Compliance", "Patient Portal", "Telehealth"],
+    link: "/industries/healthcare",
   },
   {
     id: "retail",
@@ -34,6 +35,7 @@ export const INDUSTRIES_DATA: IndustryCardItem[] = [
     desc: "Unified Point of Sale (POS), real-time store inventory sync, e-commerce integration, and customer loyalty automation.",
     iconName: "ShoppingBag",
     tags: ["Omnichannel POS", "Inventory Sync", "Payment Gateway", "Loyalty"],
+    link: "/industries/retail-ecommerce",
   },
   {
     id: "finance",
@@ -42,6 +44,7 @@ export const INDUSTRIES_DATA: IndustryCardItem[] = [
     desc: "Automated general ledgers, multi-currency invoicing, bank reconciliation, and executive financial dashboards.",
     iconName: "Landmark",
     tags: ["General Ledger", "Multi-Currency", "Tax Compliance", "Invoicing"],
+    link: "/industries/finance-accounting",
   },
   {
     id: "telecom",
@@ -50,6 +53,7 @@ export const INDUSTRIES_DATA: IndustryCardItem[] = [
     desc: "Scalable cloud infrastructure, automated CI/CD deployment pipelines, network monitoring, and enterprise SaaS apps.",
     iconName: "Cloud",
     tags: ["DevOps", "Kubernetes", "AWS Cloud", "Microservices"],
+    link: "/industries/telecom",
   },
   {
     id: "food-distribution",
@@ -58,6 +62,7 @@ export const INDUSTRIES_DATA: IndustryCardItem[] = [
     desc: "Traceability, lot number tracking, temperature-controlled inventory management, and automated purchase orders.",
     iconName: "Utensils",
     tags: ["Traceability", "Batch Control", "Cold Chain", "Supplier Portal"],
+    link: "/industries/food",
   },
   {
     id: "professional-services",
@@ -66,5 +71,6 @@ export const INDUSTRIES_DATA: IndustryCardItem[] = [
     desc: "Milestone management, billable timesheets, automated client invoicing, and resource utilization analytics.",
     iconName: "Briefcase",
     tags: ["Timesheets", "Milestones", "Client Portal", "Profitability"],
+    link: "/services/business-process-consulting",
   },
 ];
