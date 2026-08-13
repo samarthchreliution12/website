@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { SectionBadge } from "@/components/Badge/Badge";
+import { notFound } from "next/navigation";
 import { IndustryPageData } from "@/data/industries/industryPagesData";
 import {
   ArrowRight,
@@ -77,6 +78,10 @@ interface Props {
 }
 
 export default function IndustryTemplate({ data }: Props) {
+  if (!data) {
+    return notFound();
+  }
+
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const toggleFaq = (idx: number) => {
