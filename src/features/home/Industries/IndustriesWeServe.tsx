@@ -45,7 +45,7 @@ const EXTRA_INDUSTRY_PILLS = [
 ];
 
 export default function IndustriesWeServe() {
-  // Filter out "professional-services" card to replace it with the Helius-inspired wide card
+  // Filter out "professional-services" card to change custom card to wide card
   const filteredIndustries = INDUSTRIES_DATA.filter((ind) => ind.id !== "professional-services");
 
   return (
@@ -130,7 +130,7 @@ export default function IndustriesWeServe() {
             );
           })}
 
-          {/* HELIUS-INSPIRED WIDE INFORMATION CARD OCCUPYING REMAINING 2 COLUMNS */}
+          {/* Custom Card INFORMATION CARD OCCUPYING REMAINING 2 COLUMNS */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -17,6 +17,7 @@ export const INDUSTRIES_DATA: IndustryCardItem[] = [
     desc: "Optimize warehouse inventory, automated fleet routing, multi-location logistics, and real-time shipment tracking.",
     iconName: "Truck",
     tags: ["Warehouse", "WMS", "3PL Sync", "Barcode Scanning"],
+    link: "/industries/supply-chain",
   },
   {
     id: "healthcare",
