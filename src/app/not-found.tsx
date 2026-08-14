@@ -5,13 +5,13 @@ import Footer from "@/components/Footer/Footer";
 
 export default function NotFound() {
   return (
-    <main style={{ minHeight: "100vh", backgroundColor: "#CFD0CD", color: "#1F1F1F", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+    <main style={{ minHeight: "100vh", backgroundColor: "#ffffff", color: "#1F1F1F", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
       <Navbar />
 
       <section style={{ padding: "10rem 1.5rem 6rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "center", flex: 1 }}>
         <div style={{
           maxWidth: "36rem",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#2E5AA8",
           padding: "3rem 2rem",
           borderRadius: "1.5rem",
           border: "1px solid rgba(85,68,58,0.15)",
@@ -26,7 +26,7 @@ export default function NotFound() {
             fontSize: "12px",
             fontFamily: "'JetBrains Mono', monospace",
             fontWeight: 700,
-            color: "#4D2308",
+            color: "#ffffff",
             backgroundColor: "rgba(85,68,58,0.10)",
             border: "1px solid rgba(85,68,58,0.20)",
             padding: "0.25rem 0.875rem",
@@ -36,11 +36,11 @@ export default function NotFound() {
             404 — PAGE NOT FOUND
           </div>
 
-          <h1 style={{ fontSize: "2.25rem", fontWeight: 800, color: "#1F1F1F" }}>
+          <h1 style={{ fontSize: "2.25rem", fontWeight: 800, color: "#ffffff" }}>
             Resource Not Found
           </h1>
 
-          <p style={{ fontSize: "0.875rem", color: "#5F6468", lineHeight: 1.6 }}>
+          <p style={{ fontSize: "0.875rem", color: "#ffffff", lineHeight: 1.6 }}>
             The requested page or enterprise service path does not exist. Please return to the homepage or explore our services grid.
           </p>
 
@@ -49,8 +49,8 @@ export default function NotFound() {
             style={{
               padding: "0.75rem 1.75rem",
               borderRadius: "0.75rem",
-              backgroundColor: "#55443A",
-              color: "#ffffff",
+              backgroundColor: "#ffffff",
+              color: "black",
               fontSize: "0.875rem",
               fontWeight: 600,
               textDecoration: "none",
