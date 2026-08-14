@@ -159,7 +159,7 @@ export default function HireExperts() {
               transition={{ duration: 0.5, delay: 0.45, ease: [0.34, 1.56, 0.64, 1] }}
               className={styles.btnGroup}
             >
-              <a href="/contactus" className={styles.primaryBtn}>
+              <a href="/contact" className={styles.primaryBtn}>
                 <span>Schedule Free Consultation</span>
                 <ArrowRight className="w-4 h-4 text-white" />
               </a>

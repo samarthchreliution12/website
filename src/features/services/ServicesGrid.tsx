@@ -113,7 +113,7 @@ export default function ServicesGrid() {
           </motion.p>
         </div>
 
-        {/* 4-COLUMN CARDS GRID */}
+        {/* 3-COLUMN CARDS GRID */}
         <div className={styles.grid}>
           {SERVICES_DATA.map((service, index) => (
             <motion.div

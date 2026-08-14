@@ -134,7 +134,7 @@ export default function IndustriesWeServe() {
                     ))}
                   </div>
 
-                  <a href={ind.link || "/contactus"} className={styles.cardLink}>
+                  <a href={ind.link || "/contact"} className={styles.cardLink}>
                     <span>Explore Industry</span>
                     <ArrowRight className={styles.arrowIcon} />
                   </a>

@@ -126,7 +126,7 @@ export default function WhyReliution() {
             Ready to transform your business with modern technology?
           </h3>
           <div>
-            <a href="/contactus" className={styles.ctaBtn}>
+            <a href="/contact" className={styles.ctaBtn}>
               <span>Schedule a Free Consultation</span>
               <ArrowRight className="w-4 h-4 text-[#4D2308]" />
             </a>

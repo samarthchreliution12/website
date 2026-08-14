@@ -143,7 +143,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <a href="/contactus" className={styles.navLink}>
+          <a href="/contact" className={styles.navLink}>
             Contact Us
           </a>
 
@@ -154,7 +154,7 @@ export default function Navbar() {
 
         {/* CTA BUTTON - FAR RIGHT */}
         <div className={styles.ctaButton}>
-          <a href="/contactus" className={styles.ctaBtn}>
+          <a href="/contact" className={styles.ctaBtn}>
             <span>Request Quote</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
@@ -187,7 +187,7 @@ export default function Navbar() {
             <a href="/services/mobile-app-development" style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)" }}>Mobile Development</a>
             <a href="/services/custom-software-development" style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)" }}>Custom Software</a>
             <a href="/services/devops-cloud-infrastructure" style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)" }}>DevOps & Cloud</a>
-            <a href="/contactus" style={{ fontWeight: 700, fontSize: "0.875rem", color: "var(--color-accent)", paddingTop: "0.5rem", borderTop: "1px solid rgba(85,68,58,0.1)" }}>Request Quote</a>
+            <a href="/contact" style={{ fontWeight: 700, fontSize: "0.875rem", color: "var(--color-accent)", paddingTop: "0.5rem", borderTop: "1px solid rgba(85,68,58,0.1)" }}>Request Quote</a>
             <a href="/blogs" style={{ fontWeight: 700, fontSize: "0.875rem", color: "var(--color-accent)", paddingTop: "0.5rem", borderTop: "1px solid rgba(85,68,58,0.1)" }}>Blogs</a>
           </motion.div>
         )}

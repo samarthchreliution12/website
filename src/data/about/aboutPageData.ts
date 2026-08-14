@@ -146,6 +146,6 @@ export const aboutPageData: AboutPageData = {
     title: "Ready to Accelerate Your Enterprise Digital Journey?",
     description: "Schedule a technical discovery session with our solution architects to evaluate your ERP, software, and cloud requirements.",
     btnText: "Schedule a Consultation",
-    btnLink: "/contactus"
+    btnLink: "/contact"
   }
 };

@@ -151,7 +151,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.4, ease: [0.34, 1.2, 0.64, 1] }}
               className={styles.btnRow}
             >
-              <a href="/contactus" className={styles.primaryBtn}>
+              <a href="/contact" className={styles.primaryBtn}>
                 <span>Schedule Strategy Call</span>
                 <ArrowRight className="w-4 h-4" />
               </a>

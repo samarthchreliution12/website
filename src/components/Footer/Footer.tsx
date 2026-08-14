@@ -61,14 +61,14 @@ export default function Footer() {
             <h4 className={styles.colTitle}>Quick Links</h4>
             <ul className={styles.linkList}>
               <li className={styles.linkItem}><a href="/">Home</a></li>
-              <li className={styles.linkItem}><a href="/contactus">Contact Us</a></li>
+              <li className={styles.linkItem}><a href="/contact">Contact Us</a></li>
               <li className={styles.linkItem}><a href="/blogs">Blogs</a></li>
               {/* <li className={styles.linkItem}><a href="/about">About Us</a></li> */}
               <li className={styles.linkItem}><a href="/privacy-policy">Privacy Policy</a></li>
               <li className={styles.linkItem}><a href="/terms-and-conditions/">Terms and Conditions</a></li>
             </ul>
           </div>
-
+ 
           {/* COLUMN 4: CONTACT & HEADQUARTERS */}
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Headquarters & Contact</h4>
@@ -82,22 +82,22 @@ export default function Footer() {
                 Web: www.reliution.com
               </p>
               <div style={{ paddingTop: "0.5rem" }}>
-                <a href="/contactus" className={styles.contactBtn}>
+                <a href="/contact" className={styles.contactBtn}>
                   Schedule Consultation
                 </a>
               </div>
             </div>
           </div>
-
+ 
         </div>
-
+ 
         {/* BOTTOM COPYRIGHT BAR */}
         <div className={styles.bottomBar}>
           <p>© {new Date().getFullYear()} Reliution Enterprise Technologies. All rights reserved.</p>
           <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", fontFamily: "var(--font-mono)", fontSize: "11px" }}>
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms-and-conditions">Terms & Conditions</a>
-            <a href="/contactus">Security</a>
+            <a href="/contact">Security</a>
           </div>
         </div>
       </div>

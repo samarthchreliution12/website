@@ -28,4 +28,13 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
     rating: 5,
   },
+    {
+    id: "t4",
+    name: "john doe",
+    role: "Marketing & CEO",
+    company: "NexGen Retail Network",
+    content: "Reliution developed our omnichannel retail POS, iOS/Android mobile apps, and Power BI executive dashboards. Their 24x7 support team ensures our system is always running perfectly.",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+    rating: 5,
+  },
 ];

@@ -123,12 +123,12 @@ export default function IndustryTemplate({ data }: Props) {
             </div>
 
             <div className={styles.btnGroup}>
-              <Link href="/contactus" className={styles.primaryBtn}>
+              <Link href="/contact" className={styles.primaryBtn}>
                 <span>Talk to Our Experts</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
-              <Link href="/contactus" className={styles.secondaryBtn}>
+              <Link href="/contact" className={styles.secondaryBtn}>
                 <span>Get a Quote</span>
                 <ArrowRight className="w-4 h-4 text-[#4381d2]" />
               </Link>
@@ -479,12 +479,12 @@ export default function IndustryTemplate({ data }: Props) {
             <p className={styles.ctaDesc}>{data.ctaDesc}</p>
 
             <div className={styles.btnGroup} style={{ justifyContent: "center" }}>
-              <Link href="/contactus" className={styles.primaryBtn}>
+              <Link href="/contact" className={styles.primaryBtn}>
                 <span>Talk to Our Experts</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
-              <Link href="/contactus" className={styles.secondaryBtn}>
+              <Link href="/contact" className={styles.secondaryBtn}>
                 <span>Get a Quote</span>
                 <ArrowRight className="w-4 h-4 text-[#4381d2]" />
               </Link>

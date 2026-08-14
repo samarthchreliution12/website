@@ -13,13 +13,13 @@ interface Props {
 }
 
 export default function AboutUsPage({ searchParams }: Props) {
-  const SECRET_KEY = "preview-access"; // Replace with your actual secret key
+  // const SECRET_KEY = "preview-access"; // Replace with your actual secret key
 
-  // NEXT.JS 14: searchParams is a normal object (not a Promise).
-  // Uncomment the lines below when you want to enable password protection again:
-  if (searchParams?.access !== SECRET_KEY) {
-    notFound();
-  }
+
+  // // Uncomment the lines below when you want to enable password protection again:
+  // if (searchParams?.access !== SECRET_KEY) {
+  //   notFound();
+  // }
 
   return <AboutTemplate data={aboutPageData} />;
 }

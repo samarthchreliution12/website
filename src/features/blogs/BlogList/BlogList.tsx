@@ -2,11 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { BlogPost } from "@/data/blogs/blogs";
+import { BlogPost } from "@/types/blog";
 import BlogCard from "../BlogCard/BlogCard";
 import styles from "./BlogList.module.css";
 
-// takes all bolgs json data from blogs.ts and maps them to the blogcard component to display them in a grid layout.
 interface Props {
   posts: BlogPost[];
 }

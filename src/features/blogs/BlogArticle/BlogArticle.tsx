@@ -3,15 +3,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { SectionBadge } from "@/components/Badge/Badge";
-import { BlogPost } from "@/data/blogs/blogs";
+import { BlogPost } from "@/types/blog";
+import { PortableText } from "@portabletext/react";
 import styles from "./BlogArticle.module.css";
 
-// takes all bolgs json data from blogs.ts and maps them to the blogcard component to display them in a grid layout.
 interface Props {
   post: BlogPost;
 }
 
 export default function BlogArticle({ post }: Props) {
+  const isPortableText = Array.isArray(post.content) && post.content.length > 0 && typeof post.content[0] === "object";
+
   return (
     <article className={styles.articleSection}>
       <div className={styles.containerSmall}>
@@ -38,8 +40,19 @@ export default function BlogArticle({ post }: Props) {
           transition={{ duration: 0.4, delay: 0.2 }}
           className={styles.metaRow}
         >
-          <span>By {post.author}</span> • <span>{post.date}</span>
+          <span>By {post.author.name} ({post.author.role})</span> • <span>{post.publishDate}</span>
         </motion.div>
+
+        {post.coverImage && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className={styles.imageWrapper}
+          >
+            <img src={post.coverImage} alt={post.title} className={styles.coverImage} />
+          </motion.div>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -47,9 +60,13 @@ export default function BlogArticle({ post }: Props) {
           transition={{ duration: 0.5, delay: 0.3 }}
           className={styles.contentBody}
         >
-          {post.content.map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
-          ))}
+          {isPortableText ? (
+            <PortableText value={post.content} />
+          ) : (
+            (post.content as string[]).map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))
+          )}
         </motion.div>
       </div>
     </article>

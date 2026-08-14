@@ -512,42 +512,42 @@ export const SERVICE_PAGES_DATA: Record<string, ServicePageData> = {
         title: "iOS App Development",
         desc: "Build reliable and high-performance iOS applications designed around your business requirements and customer experience.",
         tags: ["Swift", "SwiftUI", "iOS Development", "App Store"],
-        link: "/contactus"
+        link: "/contact"
       },
       {
         iconName: "Bot",
         title: "Android App Development",
         desc: "Develop scalable Android applications that deliver reliable performance across devices and support your business goals.",
         tags: ["Kotlin", "Android", "Jetpack", "Play Store"],
-        link: "/contactus"
+        link: "/contact"
       },
       {
         iconName: "Code2",
         title: "Custom Software Development",
         desc: "Build custom software solutions around your specific workflows, business processes, integrations, and operational requirements.",
         tags: ["Custom Software", "APIs", "Integrations", "Automation"],
-        link: "/contactus"
+        link: "/contact"
       },
       {
         iconName: "Layers",
         title: "User Interface & UX Design",
         desc: "Design intuitive and consistent digital experiences that make mobile applications easier to use and aligned with your brand.",
         tags: ["UI Design", "UX Design", "Prototyping", "Design Systems"],
-        link: "/contactus"
+        link: "/contact"
       },
       {
         iconName: "Cloud",
         title: "Cloud & Backend Services",
         desc: "Build secure backend and cloud systems that support application performance, integrations, scalability, and reliable operations.",
         tags: ["APIs", "Cloud", "Database", "DevOps"],
-        link: "/contactus"
+        link: "/contact"
       },
       {
         iconName: "Headphones",
         title: "Mobile App Maintenance & Support",
         desc: "Keep your applications reliable after launch with ongoing maintenance, updates, monitoring, improvements, and technical support.",
         tags: ["Maintenance", "Updates", "Monitoring", "Technical Support"],
-        link: "/contactus"
+        link: "/contact"
       }
     ],
 

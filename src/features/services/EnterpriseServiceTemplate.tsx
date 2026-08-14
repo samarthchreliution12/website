@@ -155,12 +155,12 @@ export default function EnterpriseServiceTemplate({ data }: Props) {
               transition={{ duration: 0.5, delay: 0.3 }}
               className={styles.btnGroup}
             >
-              <a href="/contactus" className={styles.primaryBtn}>
+              <a href="/contact" className={styles.primaryBtn}>
                 <span>Schedule Consultation</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              <a href="/contactus" className={styles.secondaryBtn}>
+              <a href="/contact" className={styles.secondaryBtn}>
                 <MessageSquare className="w-4 h-4 text-[#55443A]" />
                 <span>Talk to an Expert</span>
               </a>
@@ -240,7 +240,7 @@ export default function EnterpriseServiceTemplate({ data }: Props) {
                   transition={{ duration: 0.4, delay: idx * 0.04 }}
                 >
                   <a
-                    href={service.link || "/contactus"}
+                    href={service.link || "/contact"}
                     className={styles.verticalStackCard}
                   >
                     {/* LEFT COLUMN: TITLE, DESCRIPTION, TAGS, BUTTON */}
@@ -577,12 +577,12 @@ export default function EnterpriseServiceTemplate({ data }: Props) {
               Schedule a confidential consultation with our enterprise solution architects to discuss your technical environment, business goals, and implementation timeline.
             </p>
             <div className={styles.ctaBtnGroup}>
-              <a href="/contactus" className={styles.primaryBtn}>
+              <a href="/contact" className={styles.primaryBtn}>
                 <span>Schedule Consultation</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              <a href="/contactus" className={styles.secondaryBtn}>
+              <a href="/contact" className={styles.secondaryBtn}>
                 <MessageSquare className="w-4 h-4 text-[#55443A]" />
                 <span>Talk to an Expert</span>
               </a>
