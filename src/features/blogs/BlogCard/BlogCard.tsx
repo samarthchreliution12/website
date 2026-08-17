@@ -21,7 +21,7 @@ export default function BlogCard({ post }: Props) {
       )}
 
       <div className={styles.cardBody}>
-        <span className={styles.categoryPill}>{category}</span>
+        <span className={styles.categoryPill}>{category.name}</span>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.excerpt}>{excerpt}</p>
       </div>

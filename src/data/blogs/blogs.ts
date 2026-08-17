@@ -1,6 +1,7 @@
+// TODO: Remove static blog fallback after Custom CMS API integration is production-ready.
 import { BlogPost } from "@/types/blog";
 
-export const BLOG_POSTS: Record<string, BlogPost> = {
+export const BLOG_POSTS: Record<string, any> = {
   "odoo-erp-implementation-guide": {
     id: "1",
     slug: "odoo-erp-implementation-guide",

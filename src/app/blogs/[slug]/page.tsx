@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import BlogArticle from "@/features/blogs/BlogArticle/BlogArticle";
-import { getBlogPostBySlug } from "@/lib/sanity";
+import { getNormalizedBlogPostBySlug } from "@/lib/blog";
 
 interface Props {
   params: { slug: string };
@@ -13,25 +13,27 @@ interface Props {
 export const revalidate = 60; 
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getBlogPostBySlug(params.slug);
+  const post = await getNormalizedBlogPostBySlug(params.slug);
   
-  if (!post || post.status !== "published") {
+  const isPublished = post && (post.status === "published" || post.status === "PUBLISHED");
+  if (!post || !isPublished) {
     return {
       title: "Blog Post Not Found | Reliution Insights",
     };
   }
 
   return {
-    title: post.seo?.title || `${post.title} | Reliution Insights`,
-    description: post.seo?.description || post.excerpt,
-    keywords: post.seo?.keywords || post.tags,
+    title: post.seoTitle || `${post.title} | Reliution Insights`,
+    description: post.seoDescription || post.excerpt,
+    keywords: post.seoKeywords || post.tags,
   };
 }
 
 export default async function BlogArticlePage({ params }: Props) {
-  const post = await getBlogPostBySlug(params.slug);
+  const post = await getNormalizedBlogPostBySlug(params.slug);
 
-  if (!post || post.status !== "published") {
+  const isPublished = post && (post.status === "published" || post.status === "PUBLISHED");
+  if (!post || !isPublished) {
     notFound();
   }
 

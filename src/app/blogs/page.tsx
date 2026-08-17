@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import BlogHero from "@/features/blogs/BlogHero/BlogHero";
 import BlogList from "@/features/blogs/BlogList/BlogList";
-import { getBlogPosts } from "@/lib/sanity";
+import { getNormalizedBlogPosts } from "@/lib/blog";
 
 // Ensure Next.js doesn't cache page data indefinitely so posts appear on publish
 export const revalidate = 60; 
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogsPage() {
-  // Fetch posts dynamically from Sanity (falls back to static posts automatically if empty/error)
-  const posts = await getBlogPosts();
+  // Fetch posts dynamically from Sanity through our normalization layer
+  const posts = await getNormalizedBlogPosts();
 
   return (
     <main className="min-h-screen bg-[#CFD0CD] text-[#1F1F1F]">
