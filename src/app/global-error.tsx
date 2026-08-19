@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function GlobalError({
   error,
@@ -9,6 +9,22 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  useEffect(() => {
+    console.error("Global Application Error:", error);
+
+    fetch("/api/errors/logs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: error.name,
+        message: error.message,
+        stack: error.stack,
+        url: typeof window !== "undefined" ? window.location.href : "",
+      }),
+      keepalive: true,
+    }).catch((err) => console.error("Failed to report global crash:", err));
+  }, [error]);
+
   return (
     <html lang="en">
       <body style={{

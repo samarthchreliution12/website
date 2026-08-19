@@ -26,7 +26,6 @@ export interface BlogPost {
   author: BlogAuthor;
   authorRole: string;
   publishDate: string;
-  readingTime: string;
   content: any; // portable text blocks for Sanity, or raw content
   tags: string[];
   seoTitle: string;

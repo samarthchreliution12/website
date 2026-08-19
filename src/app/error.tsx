@@ -11,6 +11,19 @@ export default function Error({
 }) {
   useEffect(() => {
     console.error("Application Error:", error);
+
+    // Report crash to custom server error logs endpoint
+    fetch("/api/errors/logs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: error.name,
+        message: error.message,
+        stack: error.stack,
+        url: typeof window !== "undefined" ? window.location.href : "",
+      }),
+      keepalive: true,
+    }).catch((err) => console.error("Failed to report crash:", err));
   }, [error]);
 
   return (

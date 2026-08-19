@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import Analytics from '@/components/Analytics/Analytics';
 
 export const metadata: Metadata = {
   title: 'Reliution — Enterprise Digital Transformation Partner & ERP Consulting',
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[#CFD0CD] text-[#1F1F1F] antialiased selection:bg-[#55443A] selection:text-white">
         {children}
+        <Analytics />
       </body>
     </html>
   );

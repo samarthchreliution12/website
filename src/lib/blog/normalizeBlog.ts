@@ -81,7 +81,6 @@ export function normalizeBlog(post: any): BlogPost {
     author: authorObj,
     authorRole: authorRole,
     publishDate: publishDateFormatted,
-    readingTime: post.readingTime || "5 min read",
     content: content,
     tags: post.tags || [categoryObj.name],
     seoTitle: seoTitle,

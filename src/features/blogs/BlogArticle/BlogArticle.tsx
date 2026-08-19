@@ -40,7 +40,7 @@ export default function BlogArticle({ post }: Props) {
           transition={{ duration: 0.4, delay: 0.2 }}
           className={styles.metaRow}
         >
-          <span>By {post.author.name} ({post.authorRole || post.author.role})</span> • <span>{post.publishDate}</span>
+          <span>By {post.author.name}</span> • <span>{post.publishDate}</span>
         </motion.div>
 
         {post.coverImage && (
